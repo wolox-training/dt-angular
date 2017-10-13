@@ -39,6 +39,10 @@ main::before {
 
 footer {
   background-color: $orange;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
 }
 
 .phone {
@@ -63,6 +67,32 @@ footer {
 .description {
   font-size: 0.9em;
   color: $gray;
+}
+
+.updates-title {
+  color: $white;
+}
+
+.subscription-input {
+  height: 35px;
+  width: 330px;
+  border: 0;
+  border-radius: 10px;
+}
+
+.subscription-button {
+  background-color: transparent;
+  border-style: solid;
+  border-color: $white;
+  border-width: 1px;
+  font-size: 1.3em;
+  color: $white;
+  margin: 20px 0;
+  padding: 7px 15px;
+  border-top-left-radius: 6px 12px;
+  border-bottom-left-radius: 6px 12px;
+  border-top-right-radius: 6px 12px;
+  border-bottom-right-radius: 6px 12px;
 }
 
 @media(max-width: 675px) {
