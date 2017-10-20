@@ -54,12 +54,45 @@ module.exports = [
 ];
 ```
 
+#### Testing
+
+##### Unit testing
+We combine the power of [Karma](http://karma-runner.github.io/) and [Jasmine](http://jasmine.github.io/) frameworks to develop our unit testing. You can find the configuration files in the `test/unit` folder and you can find the tests inside the `test/unit/specs` folder.
+To run these specs execute the following: `npm run test`
+
+##### End to end tests
+
+We combine the power of Protractor and Jasmine frameworks to develop our end to end tests. You can find the configuration files in the test/e2e folder and you can find the tests inside the test/e2e/specs folder.
+
+The first time you are running the tests, you probably need to update webdriver. Use the following: `./node_modules/.bin/webdriver-manager update`
+To run these specs against the url in the protractor conf execute the following: `npm run protractor`
+To run these specs against your development environment, execute the following: `npm run protractor-local`. This will hit the app in `localhost:3000`.
+
 ## Deploy
 
 #### S3
-In order to deploy you must first create **config/aws.js** file with the credentials of the Amazon S3 bucket for each environment. The file needs to have to follow the format specified in *config/aws.js.example*
+In order to deploy you must first create **config/aws.js** file with the credentials of the Amazon S3 bucket for each environment.
+The file needs to have to follow the format specified in *config/aws.js.example*
 
 Then just run `gulp s3 --env <environment name>` with your desired env as parameter.
+
+Finally, you need to add a custom routing rule so that s3 handles the 404 (or 403 depending or the bucket policy) to the s3 properties. In the **Static Website Hosting** panel, check the **Enable website hosting** option and complete the form with the following:
+```
+Index document: index.html
+```
+And add this redirect rule (Depending on the bucket policy the error code to handle can be either 404 or 403)
+```
+<RoutingRules>
+    <RoutingRule>
+        <Condition>
+            <HttpErrorCodeReturnedEquals>404</HttpErrorCodeReturnedEquals>
+        </Condition>
+        <Redirect>
+            <ReplaceKeyPrefixWith>#/</ReplaceKeyPrefixWith>
+        </Redirect>
+    </RoutingRule>
+</RoutingRules>
+```
 
 ## Further reading
 Check the docs folder for extra help on usual tasks or issues:

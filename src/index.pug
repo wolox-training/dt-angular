@@ -1,14 +1,15 @@
 doctype html
 html(lang='en')
   head
-    title title here
+    title Frontend Bootstrap!
     meta(charset='UTF-8')
-    meta(name='viewport' content='width=device-width, initial-scale=1')
+    meta(name='viewport'
+      content='width=device-width, initial-scale=1')
     link(href='/css/vendor.css' rel='stylesheet')
     link(href='/css/application.css' rel='stylesheet')
-  body
-    .center
-      h1 Frontend Bootstrap!
-      i.fa.fa-heart(aria-hidden='true')
+    base(href='/')
+  body(ng-app='app-bootstrap' ng-strict-di)
+    i.fa.fa-heart(aria-hidden='true')
+    div(ui-view='main')
     // inject:js
     // endinject

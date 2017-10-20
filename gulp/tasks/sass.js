@@ -12,7 +12,7 @@ import { getConfigKeys, errorHandler } from '../config';
 const taskOptions = getConfigKeys();
 
 const localConfig = {
-  src: './src/scss/*.scss',
+  src: './src/**/*.scss',
   dest: './build/css/',
   base: 'src/scss',
   cleanSrc: ['./build/css/application.css', '!./build/css/vendor.css'],

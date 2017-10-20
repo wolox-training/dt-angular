@@ -8,18 +8,27 @@ import plumber from 'gulp-plumber';
 import preprocess from 'gulp-preprocess';
 import sourcemaps from 'gulp-sourcemaps';
 import gulpif from 'gulp-if';
-import { getConfigKeys, getSecretKeys, errorHandler } from '../config';
+import { getConfigKeys, getSecretKeys, errorHandler, env } from '../config';
 
 const taskOptions = getConfigKeys();
 
 const localConfig = {
-  src: ['./src/js/**/*.js', '!./src/vendor/*.js', '!./src/vendor/**/*.js'],
-  dest: './build/js/',
+  src () {
+    return ['./src/app/app.module.js',
+      './src/**/*.js',
+      `!./src/app/config/!(${env}.js)`,
+      '!./src/vendor/*.js',
+      '!./src/vendor/**/*.js'
+    ];
+  },
+  dest () {
+    return './build/js/';
+  },
   buildFileName: 'all.js'
 };
 
-gulp.task('scripts', () =>
-  gulp.src(localConfig.src)
+gulp.task('scripts', () => {
+  return gulp.src(localConfig.src())
     .pipe(cached('scripts'))
     .pipe(plumber({ errorHandler }))
     .pipe(preprocess({ context: getSecretKeys() }))
@@ -30,5 +39,5 @@ gulp.task('scripts', () =>
       .pipe(gulpif(taskOptions.concat, concat(localConfig.buildFileName)))
       .pipe(gulpif(taskOptions.minify, uglify()))
     .pipe(gulpif(taskOptions.sourcemaps, sourcemaps.write()))
-    .pipe(gulp.dest(localConfig.dest))
-);
+    .pipe(gulp.dest(localConfig.dest()));
+});
