@@ -3,13 +3,22 @@ html(lang='en')
   head
     title Frontend Bootstrap!
     meta(charset='UTF-8')
-    meta(name='viewport'
-      content='width=device-width, initial-scale=1')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
     link(href='/css/vendor.css' rel='stylesheet')
     link(href='/css/application.css' rel='stylesheet')
     base(href='/')
-  body(ng-app='app-bootstrap' ng-strict-di)
-    i.fa.fa-heart(aria-hidden='true')
-    div(ui-view='main')
+  body(ng-app='wbooks')
+    main
+      .personalization
+        select.filter(ng-controller = 'FilterController as filter' ng-model = 'filter.actualFilter')
+          option(ng-repeat = 'act in filter.filters' value = '{{act.value}}' ng-disabled = '{{act.disabled}}' ng-hide = '{{act.disabled}}') {{act.name}}
+        form.search-form(ng-controller = 'SearchController as search' ng-submit = 'search.submit(search)')
+          input.search-inp(ng-model = 'search.text' placeholder = '{{search.placeholder}}')
+          input.search-btn(type = 'submit' id = 'submit' value = '')
+      .books(ng-controller = 'BooksController as books')
+        .book(ng-repeat = 'act in books.books')
+          img.book-img(src='{{act.image_url}}')
+          b.book-tit {{act.title}}
+          a.book-auth {{act.author}}
     // inject:js
     // endinject

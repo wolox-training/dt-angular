@@ -1,20 +1,88 @@
-body {
-  background-image: url('../assets/wolox_bg.png');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+body{
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
 }
 
-.center {
-  background-color: $translucent-white;
-  height: 100%;
-  left: 20%;
-  position: absolute;
-  text-align: center;
-  width: 60%;
-
-  h1 {
-    color: $wolox-green;
-  }
+main{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Open Sans';
+    align-items: center;
+    width: 60%;
 }
 
-.class-to-be-purified {
-  color: $translucent-white;
+.personalization{
+    display: flex;
+    flex-direction: row;
+    align-self: flex-start;
+    margin: 35;
+}
+
+.filter{
+    width: 238px;
+    height: 38px;
+    border: 0;
+    color: $gray;
+    padding: 12px;
+    appearance: none;
+    background:
+        linear-gradient(45deg, transparent 50%, $gray 50%),
+        linear-gradient(135deg, $gray 50%, transparent 50%);
+    background-position:
+        calc(100% - 25px) calc(1em + 2px),
+        calc(100% - 15px) calc(1em + 2px),
+        100% 0;
+    background-size:
+        10px 10px,
+        10px 10px,
+        2.5em 2.5em;
+    background-repeat: no-repeat;
+    background-color: $light-gray;
+}
+
+.search-form{
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+}
+
+.search-inp{
+    width: 200px;
+    height: 38px;
+    border: 0;
+    margin: 0;
+    background-color: $light-gray;
+}
+
+.search-btn{
+    width: 38px;
+    height: 38px;
+    background: url('/assets/search.svg');
+    border: 0;
+}
+
+.filter:active,:focus{
+    outline: none;
+}
+
+.books{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.book{
+    display: flex;
+    flex-direction: column;
+    margin: 35px;
+    width: 128px;
+}
+
+.book-img{
+    width: 128px;
+    height: 182px;
 }
