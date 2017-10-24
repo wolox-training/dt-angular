@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 
 body{
     display: flex;
@@ -10,7 +10,8 @@ body{
 main{
     display: flex;
     flex-direction: column;
-    font-family: 'Open Sans';
+    font-family: 'Roboto';
+    font-size: .75em;
     align-items: center;
     width: 60%;
 }
@@ -19,7 +20,8 @@ main{
     display: flex;
     flex-direction: row;
     align-self: flex-start;
-    margin: 35;
+    width: 100%;
+    padding: 35px 0 30px 30px;
 }
 
 .filter{
@@ -28,18 +30,18 @@ main{
     border: 0;
     color: $gray;
     padding: 12px;
+    margin-right: 28px;
     appearance: none;
     background:
-        linear-gradient(45deg, transparent 50%, $gray 50%),
-        linear-gradient(135deg, $gray 50%, transparent 50%);
+        linear-gradient(55deg, transparent 50%, $gray 50%),
+        linear-gradient(125deg, $gray 50%, transparent 50%);
     background-position:
-        calc(100% - 25px) calc(1em + 2px),
-        calc(100% - 15px) calc(1em + 2px),
+        calc(100% - 19px) calc(1em + 2px),
+        calc(100% - 12.5px) calc(1em + 2px),
         100% 0;
     background-size:
-        10px 10px,
-        10px 10px,
-        2.5em 2.5em;
+        7.5px 11px,
+        7.5px 11px;
     background-repeat: no-repeat;
     background-color: $light-gray;
 }
@@ -51,17 +53,19 @@ main{
 }
 
 .search-inp{
-    width: 200px;
+    width: 222px;
     height: 38px;
     border: 0;
     margin: 0;
+    padding: 0;
+    padding-left: 12px;
     background-color: $light-gray;
 }
 
 .search-btn{
     width: 38px;
     height: 38px;
-    background: url('/assets/search.svg');
+    background: $light-green url('/assets/search.svg') no-repeat center;
     border: 0;
 }
 
@@ -72,17 +76,22 @@ main{
 .books{
     display: flex;
     flex-flow: row wrap;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 .book{
     display: flex;
     flex-direction: column;
-    margin: 35px;
+    margin: 30px;
     width: 128px;
 }
 
 .book-img{
     width: 128px;
     height: 182px;
+    background: $some-gray url('/assets/default_book.svg') no-repeat center;
+}
+
+.book-tit{
+    margin: 11px 0 5px 0;
 }

@@ -10,14 +10,14 @@ html(lang='en')
   body(ng-app='wbooks')
     main
       .personalization
-        select.filter(ng-controller = 'FilterController as filter' ng-model = 'filter.actualFilter')
+        select.filter(ng-controller = 'FilterController as filter' ng-model = 'filter.actualFilter' ng-change = 'filter.changeFilter(filter)')
           option(ng-repeat = 'act in filter.filters' value = '{{act.value}}' ng-disabled = '{{act.disabled}}' ng-hide = '{{act.disabled}}') {{act.name}}
         form.search-form(ng-controller = 'SearchController as search' ng-submit = 'search.submit(search)')
           input.search-inp(ng-model = 'search.text' placeholder = '{{search.placeholder}}')
-          input.search-btn(type = 'submit' id = 'submit' value = '')
+          input.search-btn(type = 'submit' value = '')
       .books(ng-controller = 'BooksController as books')
-        .book(ng-repeat = 'act in books.books')
-          img.book-img(src='{{act.image_url}}')
+        .book(ng-repeat = 'act in books.getBooks()')
+          img.book-img(ng-src = '{{act.image_url}}' alt = '')
           b.book-tit {{act.title}}
           a.book-auth {{act.author}}
     // inject:js
