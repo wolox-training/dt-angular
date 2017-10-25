@@ -1,4 +1,4 @@
 .book(ng-repeat = 'act in books.getBooks()')
-  img.book-img(ng-src = '{{act.image_url}}' alt = '')
+  img.book-img(ng-src = '{{act.image_url}}' alt = '' ng-click = 'books.getBookInfo(act)')
   b.book-tit {{act.title}}
   a.book-auth {{act.author}}

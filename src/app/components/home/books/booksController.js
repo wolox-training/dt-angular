@@ -14,9 +14,12 @@ angular.module('wbooks').service('booksService',['$http',function($http){
     }
 }]);
 
-angular.module('wbooks').controller('booksController',['booksService', function(booksService){
+angular.module('wbooks').controller('booksController',['booksService', '$state', function(booksService, $state){
     booksService.getBooks(booksService);
     this.getBooks = function(){
         return booksService.books;
+    }
+    this.getBookInfo = function(book){
+        $state.go('info');
     }
 }]);
