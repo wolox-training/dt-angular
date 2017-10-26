@@ -1,0 +1,22 @@
+a.return(ui-sref = 'home') < Volver
+.description
+  img.book-img.bigger-image(ng-src = '{{infoCtrl.book.image_url}}' alt = '')
+  b.book-tit {{infoCtrl.book.title}}
+  a.book-auth {{infoCtrl.book.author}}
+  a.book-year {{infoCtrl.book.year}}
+  a.book-genre {{infoCtrl.book.genre}}
+  p.book-desc {{infoCtrl.book.description}}
+  button.rent-button() Alquilar
+.sugestions
+  img.book-img.shorter-image(ng-repeat = 'book in infoCtrl.sugestions' ng-src = '{{book.image_url}}' alt = '')
+.comments
+  h2.comments-tit Comentarios
+  .new-comment
+    b Agregar comentario
+    text-area.new-comment-input
+    button.send-new-comment Enviar
+  .comment(ng-repeat = 'comment in infoCtrl.comments')
+    img.comment-img(ng-src = '{{comment.image_src}}' alt = '')
+    b.comment-name {{comment.name}}
+    a.comment-date {{comment.date}}
+    p.comment-desc {{comment.description}}
