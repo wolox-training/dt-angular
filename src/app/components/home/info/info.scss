@@ -1,142 +1,143 @@
-
 .return {
-    position: absolute;
-    left: 34px;
-    top: 10px;
+  left: 34px;
+  position: absolute;
+  top: 10px;
 }
 
 .description {
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: row;
-    width: 100%;
-    padding: 36px 0;
-    border-bottom: 3px solid $sky-blue;
+  border-bottom: 3px solid $sky-blue;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 36px 0;
+  width: 100%;
 }
 
 .information {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .bigger-image {
-    width: 191px;
-    height: 272px;
-    margin-right: 21px;
+  height: 272px;
+  margin-right: 21px;
+  width: 191px;
 }
 
 .shorter-image {
-    width: 87px;
-    height: 124px;
-    margin: 16px 27px 31px 27px;
+  height: 124px;
+  margin: 16px 27px 31px;
+  width: 87px;
 }
 
 .book-tit {
-    font-size: 20px;
+  font-size: 20px;
 }
 
-.book-auth, .book-year, .book-genre {
-    font-size: 16px;
+.book-auth,
+.book-year,
+.book-genre {
+  font-size: 16px;
 }
 
 .book-desc {
-    color: $translucent-gray;
+  color: $translucent-gray;
 }
 
 .rent-button {
-    width: 192px;
-    height: 38px;
-    background-color: $sky-blue;
-    border: 0;
-    color: white;
-    font-weight: bold;
-    font-size: 20px;
+  background-color: $sky-blue;
+  border: 0;
+  color: $white;
+  font-size: 20px;
+  font-weight: bold;
+  height: 38px;
+  width: 192px;
 }
 
 .sugestions {
-    width: 100%;
-    border-bottom: 3px solid $sky-blue;
+  border-bottom: 3px solid $sky-blue;
+  width: 100%;
 }
 
 .subtitle {
-    color: $light-green;
+  color: $light-green;
 }
 
 .sugestions-list {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: flex-start;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
 }
 
 .comments {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 .comments-title {
-    align-self: flex-start;
+  align-self: flex-start;
 }
 
 .new-comment-input {
-    width: 100%;
-    height: 75px;
-    margin: 15px 0;
+  height: 75px;
+  margin: 15px 0;
+  width: 100%;
 }
 
 .send-new-comment {
-    width: 192px;
-    height: 38px;
-    background-color: $light-green;
-    border: 0;
-    color: white;
-    font-weight: bold;
-    font-size: 20px;
+  background-color: $light-green;
+  border: 0;
+  color: $white;
+  font-size: 20px;
+  font-weight: bold;
+  height: 38px;
+  width: 192px;
 }
 
 .comment {
-    display: flex;
-    flex-direction: row;
-    width: 80%;
-    margin: 10px 0;
+  display: flex;
+  flex-direction: row;
+  margin: 10px 0;
+  width: 80%;
 }
 
 .loaded-comments {
-    display: flex;
-    width: 100%;
-    align-items: center;
-    flex-direction: column-reverse;
+  align-items: center;
+  display: flex;
+  flex-direction: column-reverse;
+  width: 100%;
 }
 
 .comment-img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    margin: 0 8px;
-    align-self: flex-start;
-    background-color: green;
+  align-self: flex-start;
+  background-color: $green;
+  border-radius: 50%;
+  height: 40px;
+  margin: 0 8px;
+  width: 40px;
 }
 
 .comment-data {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .comment-name {
-    font-size: 14px;
+  font-size: 14px;
 }
 
 .comment-date {
-    font-size: 12px;
-    color: $other-obscure-gray;
-    margin: 8px 0;
+  color: $other-obscure-gray;
+  font-size: 12px;
+  margin: 8px 0;
 }
 
 .comment-desc {
-    color: $translucent-gray;
+  color: $translucent-gray;
 }

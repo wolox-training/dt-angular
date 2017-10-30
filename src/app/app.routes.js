@@ -9,12 +9,12 @@ angular.module('wbooks').config([
 
     // Now set up the states
     $stateProvider
-      .state('home',{
+      .state('home', {
         url: '/',
         views: {
           main: {
             templateUrl: '../app/components/home/books/books.html',
-            controller: 'booksController',
+            controller: 'BooksController',
             controllerAs: 'booksCtrl'
           }
         }
@@ -22,20 +22,20 @@ angular.module('wbooks').config([
       .state('info', {
         url: '/info/{id:int}',
         resolve: {
-          book: ['booksService', '$stateParams', function(booksService, $stateParams){
-            return booksService.getBooks().then(function(data){
+          book: ['booksService', '$stateParams', function(booksService, $stateParams) {
+            return booksService.getBooks().then(function(data) {
               return data.data.find((element) => element.id === $stateParams.id);
-            })
+            });
           }]
         },
         views: {
           main: {
             templateUrl: '../app/components/home/info/info.html',
-            controller: 'infoController',
+            controller: 'InfoController',
             controllerAs: 'infoCtrl'
           }
         }
-      })
+      });
     $locationProvider.html5Mode(true);
   }
 ]);
