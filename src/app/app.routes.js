@@ -4,39 +4,35 @@ angular.module('wbooks').config([
 
     // For any unmatched urls
     $urlRouterProvider.otherwise(($injector) => {
-      $injector.get('$state').go('home.books');
+      $injector.get('$state').go('home');
     });
 
     // Now set up the states
     $stateProvider
       .state('home',{
-        abstract: true,
-        views: {
-          main: {
-            templateUrl: '../app/components/home/home.html'
-          }
-        }
-      })
-      .state('home.books', {
         url: '/',
         views: {
-          personalization: {
-            templateUrl: '../app/components/home/personalization/personalization.html',
-            controller: 'personalizationController',
-            controllerAs: 'pers'            
-          },
-          books: {
+          main: {
             templateUrl: '../app/components/home/books/books.html',
             controller: 'booksController',
-            controllerAs: 'books'
+            controllerAs: 'booksCtrl'
           }
         }
       })
       .state('info', {
-        url: '/info',
+        url: '/info/{id:int}',
+        resolve: {
+          book: ['booksService', '$stateParams', function(booksService, $stateParams){
+            return booksService.getBooks().then(function(data){
+              return data.data.find((element) => element.id === $stateParams.id);
+            })
+          }]
+        },
         views: {
           main: {
-            templateUrl: '../app/components/info/info.html'
+            templateUrl: '../app/components/home/info/info.html',
+            controller: 'infoController',
+            controllerAs: 'infoCtrl'
           }
         }
       })

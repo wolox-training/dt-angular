@@ -1,0 +1,29 @@
+[
+    {
+        "id":3,
+        "author":"Lois Duncan",
+        "title":"Locked in time",
+        "genre":"suspense",
+        "publisher":"Little, Brown",
+        "year":"1985",
+        "image_url":"http://wolox-training.s3.amazonaws.com/uploads/6942334-M.jpg"
+     },
+     {
+        "id":4,
+        "author":"Christopher Pike",
+        "title":"Scavenger Hunt",
+        "genre":"suspense",
+        "publisher":"Pocket Books",
+        "year":"1989",
+        "image_url":"http://wolox-training.s3.amazonaws.com/uploads/6963511-M.jpg"
+     },
+     {
+        "id":5,
+        "author":"Christopher Pike",
+        "title":"Scavenger Hunt",
+        "genre":"suspense",
+        "publisher":"Pocket Books",
+        "year":"1989",
+        "image_url":"http://wolox-training.s3.amazonaws.com/uploads/6963511-M.jpg"
+     }
+]

@@ -1,3 +1,51 @@
+.filter{
+    width: 238px;
+    height: 38px;
+    border: 0;
+    color: $gray;
+    padding: 12px;
+    margin-right: 28px;
+    appearance: none;
+    background:
+        linear-gradient(55deg, transparent 50%, $gray 50%),
+        linear-gradient(125deg, $gray 50%, transparent 50%);
+    background-position:
+        calc(100% - 19px) calc(1em + 2px),
+        calc(100% - 12.5px) calc(1em + 2px),
+        100% 0;
+    background-size:
+        7.5px 11px,
+        7.5px 11px;
+    background-repeat: no-repeat;
+    background-color: $light-gray;
+}
+
+.filter:active,:focus{
+    outline: none;
+}
+
+.search-form{
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+}
+
+.search-inp{
+    width: 222px;
+    height: 38px;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    padding-left: 12px;
+    background-color: $light-gray;
+}
+
+.search-btn{
+    width: 38px;
+    height: 38px;
+    background: $light-green url('/assets/search.svg') no-repeat center;
+    border: 0;
+}
 
 .book{
     display: flex;
@@ -10,6 +58,7 @@
     width: 128px;
     height: 182px;
     background: $some-gray url('/assets/default_book.svg') no-repeat center;
+    background-size: 60% auto;
 }
 
 .book-tit{
