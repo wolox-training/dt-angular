@@ -7,8 +7,8 @@ import pug from 'gulp-pug';
 import pugLint from 'gulp-pug-linter';
 
 const localConfig = {
+  jsFiles: ['./src/**/*.js', './test/**/*.js'],
   pugFiles: './src/**/*.pug',
-  jsFiles: './src/**/*.js',
   sassFiles: './src/**/*.scss',
   errorHandler (err) {
     console.log(err.message);

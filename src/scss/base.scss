@@ -1,113 +1,31 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 
-body {
-  display: flex;
-  flex-direction: column;
-  font-family: 'Open Sans';
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  position: absolute;
-  text-align: center;
-  width: 100%;
-}
-
-header {
-  background-color: $white;
-  border-color: $orange;
-  border-style: solid;
-  border-width: 10px 0 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
-}
-
-main {
-  background-color: $light-grey;
-  display: flex;
-  justify-content: space-around;
-  flex-flow: row wrap;
-}
-
-main::before {
-  content: '';
-  width: 100%;
-  height: 12px;
-  background: $white url('/assets/triangle.png');
-}
-
-footer {
-  background-color: $orange;
-  display: flex;
-  justify-content: space-around;
-  flex-direction: column;
-  align-items: center;
-}
-
-.phone {
-  margin: 50px 50px 50px 0;
-}
-
-.separator {
-  width: 3px;
-  height: 60%;
-  background: linear-gradient(transparent, $orange, transparent);
-}
-
-.logo {
-  margin-left: 50px;
-}
-
-.info {
-  width: 250px;
-  margin: 60px 0;
-}
-
-.description {
-  font-size: 0.9em;
-  color: $gray;
-}
-
-.updates-title {
-  color: $white;
-}
-
-.subscription-input {
-  height: 35px;
-  width: 330px;
-  border: 0;
-  border-radius: 10px;
-}
-
-.subscription-button {
-  background-color: transparent;
-  border-style: solid;
-  border-color: $white;
-  border-width: 1px;
-  font-size: 1.3em;
-  color: $white;
-  margin: 20px 0;
-  padding: 7px 15px;
-  border-top-left-radius: 6px 12px;
-  border-bottom-left-radius: 6px 12px;
-  border-top-right-radius: 6px 12px;
-  border-bottom-right-radius: 6px 12px;
-}
-
-@media(max-width: 675px) {
-  .phone {
-    width: 0;
-    visibility: hidden;
+body{
+    display: flex;
+    justify-content: center;
     margin: 0;
-  }
+    padding: 0;
+}
 
-  .separator {
-    width: 0;
-    visibility: hidden;
-  }
+main{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Roboto';
+    font-size: .75em;
+    align-items: center;
+    width: 60%;
+}
 
-  .logo {
-    margin-left: 0;
-  }
+.personalization{
+    display: flex;
+    flex-direction: row;
+    align-self: flex-start;
+    width: 100%;
+    padding: 35px 0 30px 30px;
+}
+
+.books{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
 }

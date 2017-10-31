@@ -1,4 +1,5 @@
-var fs = require('fs');
+var fs = require('fs'),
+	replace = require("replace");
 
 module.exports.initReadme = function (responsibleUername, responsibleFullName, projectName, projectDescription) {
 
@@ -56,6 +57,36 @@ module.exports.initPackage = function (responsibleFullName, projectName, project
 		});
 
 	});
+}
+
+module.exports.initAngularModule = function (projectName) {
+
+	var toReplace = "'app-bootstrap'";
+	var replacement ="'" + projectName + "'";
+	var indexPug = './src/index.pug';
+
+	replace({
+		regex: toReplace,
+		replacement: replacement,
+		paths: ['./src/app', './test'],
+		include: '*.js',
+		recursive: true,
+		silent: true
+	});
+
+	fs.readFile(indexPug, 'utf8', function (err, data) {
+
+		if (err) {
+			return console.log(err);
+		}
+
+		var result = data.replace(toReplace, replacement)
+		fs.writeFile(indexPug, result, 'utf8', function (err) {
+			if (err) return console.log(err);
+		});
+
+	});
+
 }
 
 module.exports.removeScripts = function () {
