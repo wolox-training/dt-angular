@@ -24,7 +24,8 @@ angular.module('wbooks').controller('BooksController', [
         templateUrl: '../app/components/home/register/register.html',
         controller: 'RegisterController as regCtrl',
         containerClass: 'register-modal-container',
-        modelClass: 'register-modal'
+        modelClass: 'register-modal',
+        keyboard: false
       })
     };
   }

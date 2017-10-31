@@ -9,8 +9,20 @@
 
 .register-form {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column wrap;
   justify-content: center;
+  align-items: center;
+}
+
+.form-input.ng-invalid.ng-dirty {
+  border: 1px solid $error-red;
+}
+
+.error {
+  font-family: 'Roboto-Regular';
+  font-size: 10px;
+  color: $error-red;
+  letter-spacing: 0;
 }
 
 .new-book-img {
@@ -18,9 +30,10 @@
   width: auto;
 }
 
-.sugest-book-title {
+.register-title {
   font-size: 20px;
   color: $other-obscure-gray;
+  text-align: center;
 }
 
 .form-label {
@@ -36,22 +49,34 @@
   border: 0;
   height: 38px;
   margin: 10px 0;
+  padding: 0 10px;
 }
 
 .name,
-.author,
-.editorial,
-.link {
+.surname,
+.password,
+.email {
   width: 80%;
 }
 
-.price-year {
-  display: flex;
-  flex-direction: row;
-  width: 80%;
-  justify-content: space-between;
+.send-cancel {
+  margin-top: 40px;
 }
 
-.price-year-inp {
-  width: 254px;
+.cancel,
+.send {
+  width: 175px;
+  height: 38px;
+  border: 0;
+  color: $white;
+  font-weight: bold;
+  margin: 11px;
+}
+
+.send {
+  background-color: $sky-blue;
+}
+
+.cancel {
+  background-color: $mid-gray;
 }

@@ -25,8 +25,7 @@ a.return(ui-sref = 'home')
   h2.subtitle.comments-title
     | Comentarios
   .comment.new-comment
-    div
-      img.comment-img(ng-src = '{{infoCtrl.user.image}}' alt = '')
+    img.comment-img(ng-src = '{{infoCtrl.user.image}}' alt = '')
     .comment-data
       b.comment-name
         | Agregar comentario
@@ -35,8 +34,7 @@ a.return(ui-sref = 'home')
         | Enviar
   .loaded-comments
     .comment(ng-repeat = 'comment in infoCtrl.comments')
-      div
-        img.comment-img(ng-src = '{{comment.image_url}}' alt = '')
+      img.comment-img(ng-src = '{{comment.image_url}}' alt = '')
       .comment-data
         b.comment-name
           | {{comment.name}}
