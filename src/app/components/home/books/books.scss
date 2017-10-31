@@ -2,9 +2,9 @@
   appearance: none;
   background: linear-gradient(55deg, transparent 50%, $gray 50%), linear-gradient(125deg, $gray 50%, transparent 50%);
   background-color: $light-gray;
-  background-position: calc(100% - 19px) calc(1em + 2px), calc(100% - 12.5px) calc(1em + 2px), 100% 0;
+  background-position: calc(100% - 19px) calc(1em + 2px), calc(100% - 13px) calc(1em + 2px), 100% 0;
   background-repeat: no-repeat;
-  background-size: 7.5px 11px, 7.5px 11px;
+  background-size: 7px 11px, 7px 11px;
   border: 0;
   color: $gray;
   height: 38px;
@@ -54,6 +54,6 @@
   width: 128px;
 }
 
-.book-tit {
+.book-title {
   margin: 11px 0 5px;
 }

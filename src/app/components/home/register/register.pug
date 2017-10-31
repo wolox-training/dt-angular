@@ -1,25 +1,30 @@
 form.register-form(ng-action = 'regCtrl.sendRegistration()')
-    img.new-book-img(ng-src = '../assets/add_book.svg', alt = '')
-    h4.sugest-book-title Sugerir libros
-    .name
-        a.form-label Nombre
-        input.form-input(type = 'text' name = 'name')
-    .author
-        a.form-label Autor
-        input.form-input(type = 'text' name = 'author')
-    .price-year
-        .price
-            a.form-label Precio
-            input.form-input(type = 'text' name = 'price')
-        .year
-            a.form-label A&ntilde;o
-            input.form-input(type = 'text' name = 'year')
-    .editorial
-        a.form-label Editorial
-        input.form-input(type = 'text' name = 'editorial')
-    .link
-        a.form-label Link
-        input.form-input(type = 'text' name = 'link')
-    .send-cancel
-        button.send-cancel-button.cancel Cancelar
-        button.send-cancel-button.send Aceptar
+  img.new-book-img(ng-src = '../assets/add_book.svg' alt = '')
+  h4.register-title
+    | Registrarse
+  .name
+    span.form-label
+      | Nombre
+    input.form-input(type = 'text' name = 'name')
+  .surname
+    span.form-label
+      | Apellido
+    input.form-input(type = 'text' name = 'surname')
+  .email
+    span.form-label
+      | Email
+    input.form-input(type = 'text' name = 'email')
+  .passwords
+    .password
+      span.form-label
+        | Contrase&ntilde;a
+      input.form-input(type = 'password' name = 'pass')
+    .second-password
+      span.form-label
+        | Vuelva a introducir la contrase&ntilde;a
+      input.form-input(type = 'password' name = 'pass')
+  .send-cancel
+    button.send-cancel-button.cancel
+      | Cancelar
+    button.send-cancel-button.send
+      | Aceptar
