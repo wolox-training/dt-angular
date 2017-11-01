@@ -1,5 +1,5 @@
-angular.module('wbooks').controller('RegisterController', ['$state', function($state) {
-  this.sendRegistration = function() {
-    $state.go('login');
+angular.module('wbooks').controller('RegisterController', [function() {
+  this.sendRegistration = function(BooksController) {
+    BooksController.loginModal();
   };
 }]);

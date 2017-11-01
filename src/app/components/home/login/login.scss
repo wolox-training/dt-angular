@@ -1,0 +1,21 @@
+.login-modal-container {
+  background-color: $model-background;
+
+  .popeye-modal {
+    border-radius: 0;
+    width: 40%;
+  }
+}
+
+.login-form {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-title {
+  font-size: 20px;
+  color: $other-obscure-gray;
+  text-align: center;
+}

@@ -1,4 +1,4 @@
-form.register-form(name = 'registerForm' ng-submit = 'registerForm.$valid && regCtrl.sendRegistration()' novalidate)
+form.register-form(name = 'registerForm' ng-submit = 'registerForm.$valid && regCtrl.sendRegistration(booksCtrl)' novalidate)
   img.new-book-img(ng-src = '../assets/add_book.svg' alt = '')
   h4.register-title
     | Registrarse

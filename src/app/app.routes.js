@@ -11,6 +11,11 @@ angular.module('wbooks').config([
     $stateProvider
       .state('home', {
         url: '/',
+        resolve: {
+          logged: ['loginService', function(loginService) {
+            return loginService.checkLogin().then((data) => true, (error) => false);
+          }]
+        },
         views: {
           main: {
             templateUrl: '../app/components/home/books/books.html',
