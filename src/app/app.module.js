@@ -1,8 +1,10 @@
 angular.module(
   'wbooks',
   [
+    'pathgather.popeye',
     'ui.router',
     'LocalStorageModule',
-    'pascalprecht.translate'
+    'pascalprecht.translate',
+    'ngMessages'
   ]
 );

@@ -1,0 +1,40 @@
+form.register-form(name = 'registerForm' ng-submit = 'registerForm.$valid && regCtrl.sendRegistration()' novalidate)
+  img.new-book-img(ng-src = '../assets/add_book.svg' alt = '')
+  h4.register-title
+    | Registrarse
+  .name
+    span.form-label
+      | Nombre
+    input.form-input(type = 'text' name = 'name' ng-model = 'regCtrl.name' ng-pattern = '/^[a-zA-Z]*$/' required)
+    ng-messages.error(for = 'registerForm.name.$error' role = 'alert')
+      ng-message(when = 'pattern')
+        | El nombre solo puede tener letras
+  .surname
+    span.form-label
+      | Apellido
+    input.form-input(type = 'text' name = 'surname' ng-model = 'regCtrl.surname' ng-pattern = '/^[a-zA-Z]*$/' required)
+    ng-messages.error(for = 'registerForm.surname.$error' role = 'alert')
+      ng-message(when = 'pattern')
+        | El apellido solo puede tener letras
+  .password
+    span.form-label
+      | Contrase&ntilde;a
+    input.form-input(type = 'password' name = 'pass' ng-model = 'regCtrl.pass' ng-minlength = '8' ng-maxlength = '52' ng-pattern = '/([0-9].*[a-zA-Z])|([a-zA-Z].*[0-9])/' required)
+    ng-messages.error(for = 'registerForm.pass.$error' role = 'alert')
+      ng-message(when = 'pattern')
+        | La contrase&ntilde;a debe tener por lo menos una letra y un numero
+      ng-message(when = 'minlength')
+        | La contrase&ntilde;a debe tener por lo menos 8 caracteres
+      ng-message(when = 'maxlength')
+        | La contrase&ntilde;a debe tener menos de 52 caracteres
+  .email
+    span.form-label
+      | Email
+    input.form-input(type = 'email' name = 'email' ng-model = 'regCtrl.email' required)
+    ng-messages.error(for = 'registerForm.email.$error' role = 'alert')
+      ng-message(when = 'email')
+        | El email debe tener un formato valido
+  .send-cancel
+    button.cancel(ng-click = '$close()')
+      | Cancelar
+    input.send(type = 'submit' name = 'submit' ng-model = 'regCtrl.email' value = 'Aceptar')

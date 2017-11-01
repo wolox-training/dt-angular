@@ -1,31 +1,37 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
-body{
-    display: flex;
-    justify-content: center;
-    margin: 0;
-    padding: 0;
+body {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+
+  :active,
+  :focus {
+    outline: none;
+  }
+  
 }
 
-main{
-    display: flex;
-    flex-direction: column;
-    font-family: 'Roboto';
-    font-size: .75em;
-    align-items: center;
-    width: 60%;
+main {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Roboto';
+  font-size: 0.75em;
+  width: 60%;
 }
 
-.personalization{
-    display: flex;
-    flex-direction: row;
-    align-self: flex-start;
-    width: 100%;
-    padding: 35px 0 30px 30px;
+.personalization {
+  align-self: flex-start;
+  display: flex;
+  flex-direction: row;
+  padding: 35px 0 30px 30px;
+  width: 100%;
 }
 
-.books{
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
+.books {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
 }

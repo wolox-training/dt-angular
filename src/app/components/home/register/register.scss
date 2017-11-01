@@ -1,0 +1,82 @@
+.register-modal-container {
+  background-color: $model-background;
+
+  .popeye-modal {
+    border-radius: 0;
+    width: 40%;
+  }
+}
+
+.register-form {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-input.ng-invalid.ng-dirty {
+  border: 1px solid $error-red;
+}
+
+.error {
+  font-family: 'Roboto-Regular';
+  font-size: 10px;
+  color: $error-red;
+  letter-spacing: 0;
+}
+
+.new-book-img {
+  height: 50px;
+  width: auto;
+}
+
+.register-title {
+  font-size: 20px;
+  color: $other-obscure-gray;
+  text-align: center;
+}
+
+.form-label {
+  font-family: 'Roboto-Regular';
+  font-size: 12px;
+  color: $other-obscure-gray;
+  letter-spacing: 0;
+}
+
+.form-input {
+  width: 100%;
+  background-color: $light-gray;
+  border: 0;
+  height: 38px;
+  margin: 10px 0;
+  padding: 0 10px;
+}
+
+.name,
+.surname,
+.password,
+.email {
+  width: 80%;
+}
+
+.send-cancel {
+  margin-top: 40px;
+}
+
+.cancel,
+.send {
+  width: 175px;
+  height: 38px;
+  border: 0;
+  color: $white;
+  font-weight: bold;
+  margin: 11px;
+}
+
+.send {
+  background-color: $sky-blue;
+}
+
+.cancel {
+  background-color: $mid-gray;
+}

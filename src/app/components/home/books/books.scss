@@ -1,66 +1,54 @@
-.filter{
-    width: 238px;
-    height: 38px;
-    border: 0;
-    color: $gray;
-    padding: 12px;
-    margin-right: 28px;
-    appearance: none;
-    background:
-        linear-gradient(55deg, transparent 50%, $gray 50%),
-        linear-gradient(125deg, $gray 50%, transparent 50%);
-    background-position:
-        calc(100% - 19px) calc(1em + 2px),
-        calc(100% - 12.5px) calc(1em + 2px),
-        100% 0;
-    background-size:
-        7.5px 11px,
-        7.5px 11px;
-    background-repeat: no-repeat;
-    background-color: $light-gray;
+.filter {
+  appearance: none;
+  background: linear-gradient(55deg, transparent 50%, $gray 50%), linear-gradient(125deg, $gray 50%, transparent 50%);
+  background-color: $light-gray;
+  background-position: calc(100% - 19px) calc(1em + 2px), calc(100% - 13px) calc(1em + 2px), 100% 0;
+  background-repeat: no-repeat;
+  background-size: 7px 11px, 7px 11px;
+  border: 0;
+  color: $gray;
+  height: 38px;
+  margin-right: 28px;
+  padding: 12px;
+  width: 238px;
 }
 
-.filter:active,:focus{
-    outline: none;
+.search-form {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
 }
 
-.search-form{
-    display: flex;
-    flex-direction: row;
-    margin: 0;
+.search-inp {
+  background-color: $light-gray;
+  border: 0;
+  height: 38px;
+  margin: 0;
+  padding: 0 12px;
+  width: 222px;
 }
 
-.search-inp{
-    width: 222px;
-    height: 38px;
-    border: 0;
-    margin: 0;
-    padding: 0;
-    padding-left: 12px;
-    background-color: $light-gray;
+.search-btn {
+  background: $light-green url('/assets/search.svg') no-repeat center;
+  border: 0;
+  height: 38px;
+  width: 38px;
 }
 
-.search-btn{
-    width: 38px;
-    height: 38px;
-    background: $light-green url('/assets/search.svg') no-repeat center;
-    border: 0;
+.book {
+  display: flex;
+  flex-direction: column;
+  margin: 30px;
+  width: 128px;
 }
 
-.book{
-    display: flex;
-    flex-direction: column;
-    margin: 30px;
-    width: 128px;
+.book-img {
+  background: $some-gray url('/assets/default_book.svg') no-repeat center;
+  background-size: 60% auto;
+  height: 182px;
+  width: 128px;
 }
 
-.book-img{
-    width: 128px;
-    height: 182px;
-    background: $some-gray url('/assets/default_book.svg') no-repeat center;
-    background-size: 60% auto;
-}
-
-.book-tit{
-    margin: 11px 0 5px 0;
+.book-title {
+  margin: 11px 0 5px;
 }

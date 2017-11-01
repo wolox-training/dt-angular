@@ -1,5 +1,0 @@
-select.filter(ng-model = 'pers.actualFilter' ng-change = 'pers.changeFilter(pers)')
-  option(ng-repeat = 'act in pers.filters' value = '{{act.value}}' ng-disabled = '{{act.disabled}}' ng-hide = '{{act.disabled}}') {{act.name}}
-form.search-form(ng-submit = 'pers.submit(pers)')
-  input.search-inp(ng-model = 'pers.textInput' placeholder = '{{search.placeholderSearch}}')
-  input.search-btn(type = 'submit' value = '')
