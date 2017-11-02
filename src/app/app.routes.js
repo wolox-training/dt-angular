@@ -11,17 +11,27 @@ angular.module('wbooks').config([
     $stateProvider
       .state('home', {
         url: '/',
-        resolve: {
-          logged: ['loginService', function(loginService) {
-            return loginService.checkLogin().then((data) => true, (error) => false);
-          }]
-        },
         views: {
           main: {
             templateUrl: '../app/components/home/books/books.html',
             controller: 'BooksController',
             controllerAs: 'booksCtrl'
           }
+        },
+        data: {
+          requireLogin: true
+        }
+      })
+      .state('home.login', {
+        url: 'login',
+        data: {
+          requireLogin: false
+        }
+      })
+      .state('home.register', {
+        url: 'register',
+        data: {
+          requireLogin: false
         }
       })
       .state('info', {
@@ -39,6 +49,9 @@ angular.module('wbooks').config([
             controller: 'InfoController',
             controllerAs: 'infoCtrl'
           }
+        },
+        data: {
+          requireLogin: true
         }
       });
     $locationProvider.html5Mode(true);

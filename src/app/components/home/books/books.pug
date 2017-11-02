@@ -3,7 +3,7 @@
     option(ng-repeat = 'act in booksCtrl.filters' value = '{{act.value}}' ng-disabled = '{{act.disabled}}' ng-hide = '{{act.disabled}}')
       | {{act.name}}
   form.search-form(ng-submit = 'booksCtrl.submitSearch(booksCtrl)')
-    input.search-inp(ng-model = 'booksCtrl.textInput' placeholder = '{{booksCtrl.placeholderSearch}}')
+    input.search-inp(ng-model = 'booksCtrl.textInput' placeholder = 'Buscar...')
     input.search-btn(type = 'submit' value = '')
 .books
   .book(ng-repeat = 'act in booksCtrl.books')
