@@ -3,11 +3,11 @@ angular.module("wbooks").run([
   function ($rootScope, $state, sessionService) {
     $rootScope.$on("$stateChangeStart", function(event, toState) {
       if (!sessionService.loginState() && toState.data.requireLogin) {
-          event.preventDefault();
-          $state.go("home.login");
+        event.preventDefault();
+        $state.go("home.login");
       } else if (sessionService.loginState() && !toState.data.requireLogin) {
-          event.preventDefault();
-          $state.go("home");
+        event.preventDefault();
+        $state.go("home");
       }
     });
   }

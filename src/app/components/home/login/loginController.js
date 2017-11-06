@@ -2,15 +2,16 @@ angular.module('wbooks').controller('LoginController', [
   'loginService',
   'sessionService',
   '$http',
-  function(loginService, sessionService, $http) {
+  '$state',
+  function(loginService, sessionService, $http, $state) {
     this.email = '';
     this.pass = '';
     this.error = '';
-    this.sendRegistration = function(logCtrl, booksCtrl) {
+    this.sendLogin = function(logCtrl) {
       loginService.login(this.email, this.pass).then(
         function(data) {
           sessionService.setUserInfo(data.data);
-          booksCtrl.login.close();
+          $state.go('^',{},{reload: true});
         }, function(error) {
           console.log(error);
           logCtrl.error = error.data.error;

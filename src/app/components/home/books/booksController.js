@@ -1,48 +1,12 @@
 angular.module('wbooks').controller('BooksController', [
   'booksService',
-  'sessionService',
   'Popeye',
-  '$scope',
-  '$state',
-  function(booksService, sessionService, Popeye, $scope, $state) {
+  function(booksService, Popeye) {
     this.books = [];
     this.register = {};
     this.login = {};
 
     booksService.getBooks().then((data) => this.books = data.data);
-    
-    this.registerModal = function() {
-      if (sessionService.loginState() === false) {
-        $state.go('home.register');
-        this.register = Popeye.openModal({
-          templateUrl: '../app/components/home/register/register.html',
-          controller: 'RegisterController as regCtrl',
-          containerClass: 'register-modal-container',
-          scope: $scope,
-          keyboard: false
-        });
-      } else {
-        $state.go('home');
-      }
-    };
-    
-    this.loginModal = function() {
-      if (sessionService.loginState() === false) {
-        $state.go('home.login');
-        this.login = Popeye.openModal({
-          templateUrl: '../app/components/home/login/login.html',
-          controller: 'LoginController as logCtrl',
-          containerClass: 'login-modal-container',
-          scope: $scope,
-          keyboard: false
-        });
-        this.login.closed.then(function() {
-          $state.go('home');
-        });
-      } else {
-        $state.go('home');
-      }
-    };
     
     this.checkLogged = function() {
       return false;
@@ -56,7 +20,7 @@ angular.module('wbooks').controller('BooksController', [
       }
     };
 
-    this.submitSearch = () => this.loginModal();
+    this.submitSearch = () => {};
 
     this.filters = [
       { name: 'Seleccionar filtro', disabled: true, value: '1' },
