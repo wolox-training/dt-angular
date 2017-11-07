@@ -15,6 +15,11 @@ angular.module('wbooks').config([
           Popeye.closeCurrentModal();
         }],
         views: {
+          nav: {
+            templateUrl: '../app/components/home/nav/nav.html',
+            controller: 'NavController',
+            controllerAs: 'navCtrl'
+          },
           main: {
             templateUrl: '../app/components/home/books/books.html',
             controller: 'BooksController',
@@ -27,7 +32,7 @@ angular.module('wbooks').config([
       })
       .state('home.login', {
         url: 'login',
-        onEnter: ['Popeye', '$state', function(Popeye, $state) {
+        onEnter: ['Popeye', function(Popeye) {
           const modal = Popeye.openModal({
             templateUrl: '../app/components/home/login/login.html',
             controller: 'LoginController as logCtrl',
@@ -45,12 +50,13 @@ angular.module('wbooks').config([
       })
       .state('home.register', {
         url: 'register',
-        onEnter: ['Popeye', '$state', function(Popeye, $state) {
+        onEnter: ['Popeye', function(Popeye) {
           const modalReg = Popeye.openModal({
             templateUrl: '../app/components/home/register/register.html',
             controller: 'RegisterController as regCtrl',
             containerClass: 'register-modal-container',
-            keyboard: false
+            keyboard: false,
+            click: false
           });
           modalReg.closed.then(function() {
             location.reload();
@@ -70,6 +76,11 @@ angular.module('wbooks').config([
           }]
         },
         views: {
+          nav: {
+            templateUrl: '../app/components/home/nav/nav.html',
+            controller: 'NavController',
+            controllerAs: 'navCtrl'
+          },
           main: {
             templateUrl: '../app/components/home/info/info.html',
             controller: 'InfoController',

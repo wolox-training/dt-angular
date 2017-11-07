@@ -1,0 +1,61 @@
+header {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  min-height: 80px;
+  justify-content: flex-end;
+  align-items: center;
+  box-shadow: 0 0 20px $gray;
+}
+
+.wbooks-logo {
+  height: 50px;
+  margin: 15px auto 15px 50px;
+  cursor: pointer;
+}
+
+.notifications-icon {
+  width: 30px;
+  margin: 15px;
+  cursor: pointer;
+}
+
+.sugestions-icon {
+  width: 30px;
+  margin: 15px;
+  cursor: pointer;
+}
+
+.user-icon {
+  width: 40px;
+  height: 40px;
+  background-color: $green;
+  border-radius: 50%;
+  margin: 15px 50px 15px 15px;
+  cursor: pointer;
+}
+
+.menu-bar {
+  padding: 0;
+}
+
+.menu-content-user {
+  padding: 0;
+}
+
+.user-menu-item {
+  height: 36px;
+  min-height: 0;
+  overflow: hidden;
+  min-width: 160px;
+}
+
+.md-button:not([disabled]).user-menu-button.md-focused,
+.md-button:not([disabled]).user-menu-button:hover {
+  background: rgba(0,173,238,0.25);
+}
+
+md-menu-item>.user-menu-button {
+  font-size: 14px;
+  font-family: 'Roboto-Regular';
+}

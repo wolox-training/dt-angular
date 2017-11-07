@@ -5,6 +5,7 @@ angular.module(
     'ui.router',
     'LocalStorageModule',
     'pascalprecht.translate',
-    'ngMessages'
+    'ngMessages',
+    'ngMaterial'
   ]
 );

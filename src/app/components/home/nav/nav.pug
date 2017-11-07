@@ -1,0 +1,12 @@
+img.wbooks-logo(src='assets/wbooks_logo.svg' ui-sref='home' alt='')
+md-menu-bar.menu-bar
+  md-menu
+    img.notifications-icon(src='assets/notifications.svg' alt='')
+  md-menu
+    img.sugestions-icon(src='assets/add_book.svg' alt='')
+  md-menu(md-position-mode = 'target-right target' md-offset='0 52')
+    img.user-icon(ng-src='{{navCtrl.user.icon}}' ng-click='$mdMenu.open()' alt='')
+    md-menu-content.menu-content-user
+      md-menu-item.user-menu-item(ng-repeat='buttonAct in navCtrl.userOptions')
+        md-button.user-menu-button(ng-click = 'buttonAct.action()')
+          | {{buttonAct.text}}

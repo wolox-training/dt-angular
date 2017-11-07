@@ -9,6 +9,7 @@ html(lang='en')
     link(href='/css/application.css' rel='stylesheet')
     base(href='/')
   body(ng-app='wbooks')
+    header(ui-view = 'nav')
     main(ui-view = 'main')
     // inject:js
     // endinject

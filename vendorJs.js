@@ -5,5 +5,8 @@ module.exports = [
   'angular-translate/dist/angular-translate.js',
   'angular-popeye/release/popeye.min.js',
   'moment/min/moment.min.js',
-  'angular-messages/angular-messages.min.js'
+  'angular-messages/angular-messages.min.js',
+  'angular-material/angular-material.min.js',
+  'angular-animate/angular-animate.min.js',
+  'angular-aria/angular-aria.min.js'
 ];
