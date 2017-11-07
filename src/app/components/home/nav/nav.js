@@ -1,7 +1,10 @@
 angular.module('wbooks').controller('NavController', [
   'sessionService',
+  'notificationsService',
   '$state',
-  function(sessionService, $state) {
+  function(sessionService, notificationsService, $state) {
+    this.notifications = [];
+    notificationsService.getNotifications().then((data) => this.notifications = data.data);
     this.user = {
       icon: ''
     };

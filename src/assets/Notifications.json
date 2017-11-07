@@ -1,0 +1,16 @@
+[
+    {
+        "image": "",
+        "description": "Se encuentra disponible el libro:",
+        "title": "Titulo",
+        "author": "Autor",
+        "alert": ""
+    },
+    {
+        "image": "",
+        "description": "Te quedan X dias para devolver el libro:",
+        "title": "Titulo",
+        "author": "Autor",
+        "alert": "Fecha de devolucion: xx/xx/xx"
+    }
+]
