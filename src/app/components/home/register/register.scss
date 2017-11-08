@@ -18,6 +18,10 @@
   border: 1px solid $error-red;
 }
 
+.form-input.ng-valid.ng-dirty {
+  border: 1px solid $green;
+}
+
 .error {
   font-family: 'Roboto-Regular';
   font-size: 10px;
