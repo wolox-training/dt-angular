@@ -6,6 +6,7 @@ angular.module(
     'LocalStorageModule',
     'pascalprecht.translate',
     'ngMessages',
-    'ngMaterial'
+    'ngMaterial',
+    'pascalprecht.translate'
   ]
 );

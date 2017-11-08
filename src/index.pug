@@ -1,13 +1,13 @@
 doctype html
 html(lang='en')
   head
-    title
-      | WBooks!
     meta(charset='UTF-8')
     meta(name='viewport' content='width=device-width, initial-scale=1')
     link(href='/css/vendor.css' rel='stylesheet')
     link(href='/css/application.css' rel='stylesheet')
     base(href='/')
+    title
+      | Wbooks!
   body(ng-app='wbooks')
     header(ui-view = 'nav')
     main(ui-view = 'main')

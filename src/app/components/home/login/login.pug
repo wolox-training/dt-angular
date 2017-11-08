@@ -1,27 +1,27 @@
 form.login-form(name = 'loginForm' ng-submit = 'loginForm.$valid && logCtrl.sendLogin(logCtrl)' novalidate)
   img.new-book-img(ng-src = '../assets/add_book.svg' alt = '')
   h4.login-title
-    | Iniciar sesi&oacute;n
+    | {{ 'LOGIN' | translate }}
   span.error {{logCtrl.error}}
   .email
     span.form-label
-      | Email
+      | {{ 'EMAIL' | translate }}
     input.form-input(type = 'email' name = 'email' ng-model = 'logCtrl.email' required)
     ng-messages.error(for = 'loginForm.email.$error' role = 'alert')
       ng-message(when = 'email')
-        | El email debe tener un formato valido
+        | {{ 'WRONG_EMAIL' | translate }}
   .password
     span.form-label
-      | Contrase&ntilde;a
+      | {{ 'PASSWORD' | translate }}
     input.form-input(type = 'password' name = 'pass' ng-model = 'logCtrl.pass' ng-minlength = '8' ng-maxlength = '52' required)
     ng-messages.error(for = 'loginForm.pass.$error' role = 'alert')
       ng-message(when = 'pattern')
-        | La contrase&ntilde;a debe tener por lo menos una letra y un numero
+        | {{ 'WRONG_PASSWORD' | translate }}
       ng-message(when = 'minlength')
-        | La contrase&ntilde;a debe tener por lo menos 8 caracteres
+        | {{ 'SHORT_PASSWORD' | translate }}
       ng-message(when = 'maxlength')
-        | La contrase&ntilde;a debe tener menos de 52 caracteres
+        | {{ 'LONG_PASSWORD' | translate }}
   .send-cancel
     button.cancel(ng-click = '$close()')
-      | Cancelar
-    input.send(type = 'submit' name = 'submit' ng-model = 'logCtrl.email' value = 'Aceptar')
+      | {{ 'CANCEL' | translate }}
+    input.send(type = 'submit' name = 'submit' ng-model = 'logCtrl.email' value = "{{ 'ACCEPT' | translate }}")

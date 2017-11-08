@@ -1,5 +1,5 @@
 a.return(ui-sref = 'home')
-  | < Volver
+  | < {{ 'RETURN' | translate }}
 .description
   div
     img.book-img.bigger-image(ng-src = '{{infoCtrl.book.image_url}}' alt = '')
@@ -15,23 +15,23 @@ a.return(ui-sref = 'home')
     p.book-desc
       | {{infoCtrl.book.description}}
     button.rent-button()
-      | Alquilar
+      | {{ 'RENT' | translate }}
 .sugestions
   h2.subtitle
-    | Sugerencias
+    | {{ 'SUGESTIONS' | translate }}
   .sugestions-list
     img.book-img.shorter-image(ng-repeat = 'book in infoCtrl.sugestions' ng-src = '{{book.image_url}}' alt = '')
 .comments
   h2.subtitle.comments-title
-    | Comentarios
+    | {{ 'COMMENTS' | translate }}
   .comment.new-comment
     img.comment-img(ng-src = '{{infoCtrl.user.image}}' alt = '')
     .comment-data
       b.comment-name
-        | Agregar comentario
+        | {{ 'ADD_COMMENT' | translate }}
       textarea.new-comment-input(ng-model = 'infoCtrl.newCommentInput')
       button.send-new-comment(ng-click = 'infoCtrl.addComment(infoCtrl)')
-        | Enviar
+        | {{ 'SEND' | translate }}
   .loaded-comments
     .comment(ng-repeat = 'comment in infoCtrl.comments')
       img.comment-img(ng-src = '{{comment.image_url}}' alt = '')

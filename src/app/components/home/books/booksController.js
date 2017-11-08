@@ -1,6 +1,7 @@
 angular.module('wbooks').controller('BooksController', [
   'booksService',
-  function(booksService) {
+  '$translate',
+  function(booksService, $translate) {
     this.books = [];
     this.register = {};
     this.login = {};
@@ -22,9 +23,9 @@ angular.module('wbooks').controller('BooksController', [
     this.submitSearch = () => {};
 
     this.filters = [
-      { name: 'Seleccionar filtro', disabled: true, value: '1' },
-      { name: 'Nombre', disabled: false, value: '2' },
-      { name: 'Autor', disabled: false, value: '3' }
+      { name: $translate.instant('SELECT_FILTER'), disabled: true, value: '1' },
+      { name: $translate.instant('NAME'), disabled: false, value: '2' },
+      { name: $translate.instant('AUTHOR'), disabled: false, value: '3' }
     ];
     this.actualFilter = this.filters[0].value;
     this.textInput = '';

@@ -8,5 +8,6 @@ module.exports = [
   'angular-messages/angular-messages.min.js',
   'angular-material/angular-material.min.js',
   'angular-animate/angular-animate.min.js',
-  'angular-aria/angular-aria.min.js'
+  'angular-aria/angular-aria.min.js',
+  'angular-translate/dist/angular-translate.js'
 ];
