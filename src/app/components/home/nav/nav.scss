@@ -63,6 +63,8 @@ md-menu-item>.user-menu-button {
 .notifications-menu-item {
   height: auto;
   border-bottom: 1px solid $some-gray;
+  min-width: 320px;
+  cursor: pointer;
 }
 
 .notifications-menu-item:last-child {
