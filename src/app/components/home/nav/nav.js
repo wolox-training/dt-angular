@@ -11,7 +11,7 @@ angular.module('wbooks').controller('NavController', [
     this.userOptions = [
       {
         text: 'Cerrar sesion',
-        action: function(){
+        action: function() {
           sessionService.deleteUserInfo();
           $state.go('home.login');
         }

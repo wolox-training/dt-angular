@@ -52,10 +52,56 @@ header {
 
 .md-button:not([disabled]).user-menu-button.md-focused,
 .md-button:not([disabled]).user-menu-button:hover {
-  background: rgba(0,173,238,0.25);
+  background: $transparent-blue;
 }
 
 md-menu-item>.user-menu-button {
   font-size: 14px;
   font-family: 'Roboto-Regular';
+}
+
+.notifications-menu-item {
+  height: auto;
+  border-bottom: 1px solid $some-gray;
+}
+
+.notifications-menu-item:last-child {
+  border-bottom: 0;
+}
+
+.notification-image {
+  width: 56px;
+  height: 80px;
+  margin: 14px;
+  border: 0;
+}
+
+.notification-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  font-size: 14px;
+  height: 100%;
+  padding: 0;
+  margin: 14px 0;
+  font-family: 'Roboto-Regular';
+}
+
+.notification-description {
+  margin: 2px 0;
+}
+
+.notification-title {
+  margin: 2px 0;
+}
+
+.notification-author {
+  font-size: 12px;
+  color: $other-obscure-gray;
+  margin: 2px 0;
+}
+
+.notification-alert {
+  font-size: 12px;
+  color: $error-red;
 }

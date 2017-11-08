@@ -38,11 +38,11 @@ angular.module('wbooks').config([
             controller: 'LoginController as logCtrl',
             containerClass: 'login-modal-container',
             keyboard: false,
-            click: false,
-          })
+            click: false
+          });
           modal.closed.then(function() {
             location.reload();
-          })
+          });
         }],
         data: {
           requireLogin: false
@@ -60,7 +60,7 @@ angular.module('wbooks').config([
           });
           modalReg.closed.then(function() {
             location.reload();
-          })
+          });
         }],
         data: {
           requireLogin: false

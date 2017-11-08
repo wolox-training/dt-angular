@@ -1,21 +1,22 @@
 img.wbooks-logo(src='assets/wbooks_logo.svg' ui-sref='home' alt='')
 md-menu-bar.menu-bar
   md-menu
-    img.notifications-icon(src='assets/notifications.svg' ng-click='$mdMenu.open()' alt='')
+    img.notifications-icon(src='assets/notifications.svg' ng-click='$mdMenu.open($event)' alt='' md-menu-align-target)
     md-menu-content.menu-content-notifications
       md-menu-item.notifications-menu-item(ng-repeat='notAct in navCtrl.notifications')
         img.notification-image(ng-src='{{notAct.image}}' alt='')
-        span.notification-description
-          | {{notAct.description}}
-        b.notification-title
-          | {{notAct.title}}
-        span.notification-author
-          | {{notAct.author}}
-        span.notification-alert
-          | {{notAct.alert}}
+        .notification-info
+          span.notification-description
+            | {{notAct.description}}
+          b.notification-title
+            | {{notAct.title}}
+          span.notification-author
+            | {{notAct.author}}
+          span.notification-alert
+            | {{notAct.alert}}
   img.sugestions-icon(src='assets/add_book.svg' alt='')
   md-menu(md-position-mode = 'target-right target' md-offset='0 52')
-    img.user-icon(ng-src='{{navCtrl.user.icon}}' ng-click='$mdMenu.open()' alt='')
+    img.user-icon(ng-src='{{navCtrl.user.icon}}' ng-click='$mdMenu.open($event)' alt='')
     md-menu-content.menu-content-user
       md-menu-item.user-menu-item(ng-repeat='buttonAct in navCtrl.userOptions')
         md-button.user-menu-button(ng-click = 'buttonAct.action()')

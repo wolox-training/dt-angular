@@ -1,7 +1,6 @@
 angular.module('wbooks').controller('BooksController', [
   'booksService',
-  'Popeye',
-  function(booksService, Popeye) {
+  function(booksService) {
     this.books = [];
     this.register = {};
     this.login = {};
