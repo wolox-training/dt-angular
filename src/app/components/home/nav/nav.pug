@@ -16,7 +16,7 @@ md-menu-bar.menu-bar
             | {{notAct.alert}}
   img.sugestions-icon(src='assets/add_book.svg' alt='')
   md-menu(md-position-mode = 'target-right target' md-offset='0 52')
-    img.user-icon(ng-src='{{navCtrl.user.icon}}' ng-click='$mdMenu.open($event)' alt='')
+    img.user-icon(ng-src='{{navCtrl.user.image}}' ng-click='$mdMenu.open($event)' alt='')
     md-menu-content.menu-content-user
       md-menu-item.user-menu-item(ng-repeat='buttonAct in navCtrl.userOptions')
         md-button.user-menu-button(ng-click = 'buttonAct.action()')

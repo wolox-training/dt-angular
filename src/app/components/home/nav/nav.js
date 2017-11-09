@@ -1,14 +1,13 @@
 angular.module('wbooks').controller('NavController', [
   'sessionService',
   'notificationsService',
+  'loginService',
   '$state',
   '$translate',
-  function(sessionService, notificationsService, $state, $translate) {
+  function(sessionService, notificationsService, loginService, $state, $translate) {
     this.notifications = [];
     notificationsService.getNotifications().then((data) => this.notifications = data.data);
-    this.user = {
-      icon: ''
-    };
+    this.user = loginService.getUserInfo();
     this.userOptions = [
       {
         text: $translate.instant('LOGOUT'),

@@ -20,7 +20,7 @@ angular.module('wbooks').controller('BooksController', [
       }
     };
 
-    this.submitSearch = () => {};
+    this.submitSearch = () => { console.log(this.books); };
 
     this.filters = [
       { name: $translate.instant('SELECT_FILTER'), disabled: true, value: '1' },

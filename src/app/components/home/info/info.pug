@@ -14,8 +14,13 @@ a.return(ui-sref = 'home')
       | {{infoCtrl.book.genre}}
     p.book-desc
       | {{infoCtrl.book.description}}
-    button.rent-button()
-      | {{ 'RENT' | translate }}
+    button.rent-button(ng-disabled = 'infoCtrl.rentButton.disabled' ng-click = 'infoCtrl.rentButton.onclick()')
+      | {{ infoCtrl.rentButton.text | translate }}
+    ng-messages.error(for = 'infoCtrl.rentButton.error' role = 'alert')
+      ng-message(when = 'ya_esta_en_uso')
+        | {{ 'ALREADY_WISHLIST' | translate }}
+      ng-message(when = 'success')
+        | {{ 'SUCCESFULLY_ADDED' | translate }}
 .sugestions
   h2.subtitle
     | {{ 'SUGESTIONS' | translate }}

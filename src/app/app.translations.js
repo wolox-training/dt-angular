@@ -25,7 +25,12 @@ angular.module('wbooks').config(function($translateProvider) {
     SURNAME: 'Apellido',
     WRONG_SURNAME: 'El apellido solo puede tener letras',
     WRONG_NAME: 'El nombre solo puede tener letras',
-  }
+    WISHLIST: 'Whishlist',
+    PROCESSING: 'En proceso...',
+    RETURN_BOOK: 'Devolver',
+    ALREADY_WISHLIST: 'El libro ya esta en tu wishlist',
+    SUCCESFULLY_ADDED: 'Agregado correctamente',
+  };
   const english = {
     WBOOKS_TITLE: 'Wbooks!',
     SEARCH_PLACEHOLDER: 'Search...',
@@ -52,7 +57,9 @@ angular.module('wbooks').config(function($translateProvider) {
     SURNAME: 'Surname',
     WRONG_SURNAME: 'Surname should have only letters',
     WRONG_NAME: 'Name should have only letters',
-  }
+    WISHLIST: 'Whishlist',
+    PROCESSING: 'Processing...',
+  };
   $translateProvider.translations('es', spanish);
   $translateProvider.translations('en', english);
   $translateProvider.preferredLanguage('es');
