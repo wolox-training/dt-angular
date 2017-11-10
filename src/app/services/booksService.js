@@ -11,8 +11,12 @@ angular.module('wbooks').service('booksService', [
     this.getSugestions = function() {
       return $http.get('assets/Sugestions.json');
     };
-    this.getComments = function() {
-      return $http.get('assets/Comments.json');
+    this.getComments = function(book_id) {
+      return $http.get(api + '/books/'+book_id+'/comments');
+    };
+    this.addComment = function(book_id, user_id, content) {
+      console.log(content);
+      return $http.post(api + '/books/'+book_id+'/comments',{book_id, user_id, content});
     };
   }
 ]);

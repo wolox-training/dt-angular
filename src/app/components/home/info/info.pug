@@ -29,21 +29,23 @@ a.return(ui-sref = 'home')
 .comments
   h2.subtitle.comments-title
     | {{ 'COMMENTS' | translate }}
-  .comment.new-comment
+  form.comment.new-comment(name='commentForm' ng-submit='commentForm.$valid && infoCtrl.addComment(infoCtrl)' novalidate)
     img.comment-img(ng-src = '{{infoCtrl.user.image}}' alt = '')
     .comment-data
       b.comment-name
         | {{ 'ADD_COMMENT' | translate }}
-      textarea.new-comment-input(ng-model = 'infoCtrl.newCommentInput')
-      button.send-new-comment(ng-click = 'infoCtrl.addComment(infoCtrl)')
-        | {{ 'SEND' | translate }}
-  .loaded-comments
-    .comment(ng-repeat = 'comment in infoCtrl.comments')
-      img.comment-img(ng-src = '{{comment.image_url}}' alt = '')
+      textarea.new-comment-input(name='content' ng-model = 'infoCtrl.newCommentInput' ng-maxlength = '255' required)
+      ng-messages.error(for = 'commentForm.content.$error' role = 'alert')
+        ng-message(when = 'maxlength')
+          | {{ 'MAX_CHARS' | translate }}
+      input.send-new-comment(ng-disabled='!commentForm.$valid' type='submit' name='submit' value="{{ 'SEND' | translate }}")
+  ol.loaded-comments
+    li.comment(ng-repeat = 'comment in infoCtrl.comments | limitTo: -4')
+      img.comment-img(ng-src = '{{comment.user.image_url}}' alt = '')
       .comment-data
         b.comment-name
-          | {{comment.name}}
+          | {{comment.user.first_name}} {{comment.user.last_name}}
         span.comment-date
-          | {{comment.date}}
+          | {{infoCtrl.getDate(comment.created_at)}}
         p.comment-desc
-          | {{comment.description}}
+          | {{comment.content}}

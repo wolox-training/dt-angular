@@ -100,6 +100,10 @@
   font-weight: bold;
   height: 38px;
   width: 192px;
+  cursor: pointer;
+  ::disabled {
+    background-color: $gray;
+  }
 }
 
 .comment {
@@ -114,6 +118,7 @@
   display: flex;
   flex-direction: column-reverse;
   width: 100%;
+  padding: 0;
 }
 
 .comment-img {

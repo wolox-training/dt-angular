@@ -15,7 +15,7 @@ angular.module('wbooks').controller('InfoController', [
       error: {}
     };
     this.changeRentStatus = function(data, rentButton, userID, bookID) {
-      let rentedBy = 'gfdfg';
+      let rentedBy = null;
       data.data.forEach(function(element) {
         const startDate = moment(element.from, 'YYYY-MM-DD');
         const endDate = moment(element.to, 'YYYY-MM-DD');
@@ -54,13 +54,19 @@ angular.module('wbooks').controller('InfoController', [
     this.newCommentInput = '';
     this.addComment = function(infoCtrl) {
       const newComment = {
-        name: infoCtrl.user.name,
-        date: moment().format('DD/MM/YYYY'),
-        description: infoCtrl.newCommentInput,
-        image_url: infoCtrl.user.image
+        user: {
+          first_name: infoCtrl.user.name,
+          image_url: infoCtrl.user.image
+        },
+        created_at: moment().format(),
+        content: infoCtrl.newCommentInput
       };
       infoCtrl.comments.push(newComment);
+      booksService.addComment(infoCtrl.book.id,infoCtrl.user.id,infoCtrl.newCommentInput).then(data => console.log(data),error=>console.log(error));
       infoCtrl.newCommentInput = '';
+    };
+    this.getDate = function(stamp) {
+      return moment(stamp).format('YYYY/MM/DD');
     };
   }
 ]);

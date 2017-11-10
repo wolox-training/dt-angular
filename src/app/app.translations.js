@@ -30,6 +30,7 @@ angular.module('wbooks').config(function($translateProvider) {
     RETURN_BOOK: 'Devolver',
     ALREADY_WISHLIST: 'El libro ya esta en tu wishlist',
     SUCCESFULLY_ADDED: 'Agregado correctamente',
+    MAX_CHARS: 'No puede ingresar mas de 255 caracteres',
   };
   const english = {
     WBOOKS_TITLE: 'Wbooks!',
