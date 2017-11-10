@@ -15,7 +15,6 @@ angular.module('wbooks').service('booksService', [
       return $http.get(api + '/books/'+book_id+'/comments');
     };
     this.addComment = function(book_id, user_id, content) {
-      console.log(content);
       return $http.post(api + '/books/'+book_id+'/comments',{book_id, user_id, content});
     };
   }

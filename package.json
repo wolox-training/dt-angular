@@ -40,7 +40,8 @@
     "angular-translate": "^2.16.0",
     "angular-ui-router": "^0.4.2",
     "jshint": "^2.9.5",
-    "moment": "^2.19.1"
+    "moment": "^2.19.1",
+    "ng-dialog": "^1.4.0"
   },
   "devDependencies": {
     "babel-core": "^6.8.0",

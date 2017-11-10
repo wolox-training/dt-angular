@@ -3,7 +3,7 @@ module.exports = [
   'angular-ui-router/release/angular-ui-router.js',
   'angular-local-storage/dist/angular-local-storage.js',
   'angular-translate/dist/angular-translate.js',
-  'angular-popeye/release/popeye.min.js',
+  'ng-dialog/js/ngDialog.js',
   'moment/min/moment.min.js',
   'angular-messages/angular-messages.min.js',
   'angular-material/angular-material.min.js',

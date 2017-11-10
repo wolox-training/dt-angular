@@ -22,6 +22,6 @@ form.login-form(name = 'loginForm' ng-submit = 'loginForm.$valid && logCtrl.send
       ng-message(when = 'maxlength')
         | {{ 'LONG_PASSWORD' | translate }}
   .send-cancel
-    button.cancel(ng-click = '$close()')
+    button.cancel(ng-click = 'closeThisDialog()')
       | {{ 'CANCEL' | translate }}
     input.send(type = 'submit' name = 'submit' ng-model = 'logCtrl.email' value = "{{ 'ACCEPT' | translate }}")

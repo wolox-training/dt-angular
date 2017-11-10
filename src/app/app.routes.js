@@ -11,8 +11,8 @@ angular.module('wbooks').config([
     $stateProvider
       .state('home', {
         url: '/',
-        onEnter: ['Popeye', function(Popeye) {
-          Popeye.closeCurrentModal();
+        onEnter: ['ngDialog', function(ngDialog) {
+          ngDialog.closeAll();
         }],
         views: {
           nav: {
@@ -32,17 +32,18 @@ angular.module('wbooks').config([
       })
       .state('home.login', {
         url: 'login',
-        onEnter: ['Popeye', function(Popeye) {
-          const modal = Popeye.openModal({
-            templateUrl: '../app/components/home/login/login.html',
-            controller: 'LoginController as logCtrl',
-            containerClass: 'login-modal-container',
-            keyboard: false,
-            click: false
+        onEnter: ['ngDialog', function(ngDialog) {
+          const modalLog = ngDialog.open({
+            template: '../app/components/home/login/login.html',
+            controller: 'LoginController',
+            controllerAs: 'logCtrl',
+            className: 'ngdialog-theme-default',
+            showClose: false,
+            width: '40%',
+            closeByDocument: false,
+            closeByNavigation: true,
           });
-          modal.closed.then(function() {
-            location.reload();
-          });
+          modalLog.closePromise.then(() => location.reload() );
         }],
         data: {
           requireLogin: false
@@ -50,17 +51,17 @@ angular.module('wbooks').config([
       })
       .state('home.register', {
         url: 'register',
-        onEnter: ['Popeye', function(Popeye) {
-          const modalReg = Popeye.openModal({
-            templateUrl: '../app/components/home/register/register.html',
-            controller: 'RegisterController as regCtrl',
-            containerClass: 'register-modal-container',
-            keyboard: false,
-            click: false
+        onEnter: ['ngDialog', function(ngDialog) {
+          const modalReg = ngDialog.open({
+            template: '../app/components/home/register/register.html',
+            controller: 'RegisterController',
+            controllerAs: 'regCtrl',
+            className: 'ngdialog-theme-default',
+            showClose: false,
+            width: '40%',
+            closeByNavigation: true,
           });
-          modalReg.closed.then(function() {
-            location.reload();
-          });
+          modalReg.closePromise.then(() => location.reload() );
         }],
         data: {
           requireLogin: false

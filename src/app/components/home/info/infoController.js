@@ -50,13 +50,15 @@ angular.module('wbooks').controller('InfoController', [
     booksService
       .getComments(this.book.id)
       .then((data) => this.comments = data.data);
-    this.user = loginService.getUserInfo();
+    this.user = {};
+    loginService.getUserInfo().then(data => this.user = data.data);
     this.newCommentInput = '';
     this.addComment = function(infoCtrl) {
       const newComment = {
         user: {
-          first_name: infoCtrl.user.name,
-          image_url: infoCtrl.user.image
+          first_name: infoCtrl.user.first_name,
+          last_name: infoCtrl.user.last_name,
+          image_url: infoCtrl.user.image,
         },
         created_at: moment().format(),
         content: infoCtrl.newCommentInput

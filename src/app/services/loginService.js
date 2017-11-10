@@ -9,6 +9,7 @@ angular.module('wbooks').service('loginService', [
       });
     };
     this.getUserInfo = function() {
+      return $http.get(api + '/users/me');
       return {
         name: 'Anonymus',
         image: '',

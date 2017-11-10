@@ -101,9 +101,11 @@
   height: 38px;
   width: 192px;
   cursor: pointer;
+
   ::disabled {
     background-color: $gray;
   }
+  
 }
 
 .comment {
