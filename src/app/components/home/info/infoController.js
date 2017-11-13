@@ -14,8 +14,15 @@ angular.module('wbooks').controller('InfoController', [
       text: 'PROCESSING',
       error: {}
     };
-    this.changeRentStatus = function(data, rentButton, userID, bookID) {
-      let rentedBy = null;
+    let bookID = -1;
+    let userID = -1;
+    let rentButton = this.rentButton;
+    this.addWish = function() {
+      console.log(userID);
+      wishlistService.addBook(bookID, userID).then(() => rentButton.error.success = true, () => rentButton.error.ya_esta_en_uso = true);
+    };
+    this.changeRentStatus = function(data) {
+      let rentedBy = 'sdsadsa';
       data.data.forEach(function(element) {
         const startDate = moment(element.from, 'YYYY-MM-DD');
         const endDate = moment(element.to, 'YYYY-MM-DD');
@@ -24,25 +31,25 @@ angular.module('wbooks').controller('InfoController', [
           rentedBy = element.user.id;
         }
       }, this);
-      rentButton.disabled = false;
+      this.rentButton.disabled = false;
       if (rentedBy === null){
-        rentButton.text = 'RENT';
-        rentButton.onclick = function() {
+        this.rentButton.text = 'RENT';
+        this.rentButton.onclick = function() {
           console.log('RENT');
         };
-      }else if (rentedBy === userID) {
-        rentButton.text = 'RETURN_BOOK';
-        rentButton.disabled = true;
+      }else if (rentedBy === this.userID) {
+        this.rentButton.text = 'RETURN_BOOK';
+        this.rentButton.disabled = true;
       }else {
-        rentButton.text = 'WISHLIST';
-        rentButton.onclick = function() {
-          wishlistService.addBook(bookID, userID).then(() => rentButton.error.success = true, () => rentButton.error.ya_esta_en_uso = true);
-        };
+        this.rentButton.text = 'WISHLIST';
+        this.rentButton.onclick = this.addWish;
+        userID = this.user.id;
+        bookID = this.book.id;
       }
     };
     booksService
       .getRentStatus(this.book.id)
-      .then(data => this.changeRentStatus(data, this.rentButton, this.user.id, this.book.id));
+      .then(data => this.changeRentStatus(data));
     booksService
       .getSugestions(this.book.id)
       .then((data) => this.sugestions = data.data);

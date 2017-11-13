@@ -43,7 +43,7 @@ a.return(ui-sref = 'home')
     li.comment(ng-repeat = 'comment in infoCtrl.comments | limitTo: -4')
       img.comment-img(ng-src = '{{comment.user.image_url}}' alt = '')
       .comment-data
-        b.comment-name
+        b.comment-name(ui-sref = 'profile({id: comment.user.id})')
           | {{comment.user.first_name}} {{comment.user.last_name}}
         span.comment-date
           | {{infoCtrl.getDate(comment.created_at)}}

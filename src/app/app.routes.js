@@ -91,6 +91,24 @@ angular.module('wbooks').config([
         data: {
           requireLogin: true
         }
+      })
+      .state('profile', {
+        url: '/profile/{id:int}',
+        views: {
+          nav: {
+            templateUrl: '../app/components/home/nav/nav.html',
+            controller: 'NavController',
+            controllerAs: 'navCtrl'
+          },
+          main: {
+            templateUrl: '../app/components/home/profile/profile.html',
+            controller: 'ProfileController',
+            controllerAs: 'profCtrl'
+          }
+        },
+        data: {
+          requireLogin: true
+        }
       });
     $locationProvider.html5Mode(true);
   }

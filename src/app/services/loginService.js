@@ -10,11 +10,12 @@ angular.module('wbooks').service('loginService', [
     };
     this.getUserInfo = function() {
       return $http.get(api + '/users/me');
-      return {
-        name: 'Anonymus',
-        image: '',
-        id: '1'
-      };
+    };
+    this.getOtherUserInfo = function(id) {
+      return $http.get(api + '/users/' + id)
+    }
+    this.getComments = function(user_id) {
+      return $http.get(api + '/users/'+user_id+'/comments');
     };
   }
 ]);

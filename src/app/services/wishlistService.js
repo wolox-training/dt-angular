@@ -6,7 +6,7 @@ angular.module('wbooks').service('wishlistService', [
       return $http.post(api + '/users/'+user_id+'/wishes', {book_id, user_id});
     };
     this.getWishlist = function(user_id) {
-      return $http.get(api + '​/users/'+user_id+'/wishes');
+      return $http.get(api+'​/users/'+user_id+'/wishes');
     };
   }
 ]);

@@ -17,5 +17,8 @@ angular.module('wbooks').service('booksService', [
     this.addComment = function(book_id, user_id, content) {
       return $http.post(api + '/books/'+book_id+'/comments',{book_id, user_id, content});
     };
+    this.getRentedBooks = function(user_id) {
+      return $http.get(api + '/users/'+user_id+'/rents');
+    }
   }
 ]);

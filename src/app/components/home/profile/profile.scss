@@ -1,0 +1,68 @@
+
+.big-user-icon {
+  width: 108px;
+  height: 108px;
+}
+
+.user-information {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border-bottom: 2px solid $sky-blue;
+  width: 100%;
+  padding: 60px 0;
+}
+
+.user-data {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 180px;
+}
+
+.counters {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-top: 10px;
+}
+
+.books-counter {
+  padding: 6px 15px 6px 0;
+  border-right: 1px solid $light-green;
+}
+
+.comments-counter {
+  padding: 6px 0 6px 15px;
+}
+
+.rented-books,
+.wishlist {
+  width: 100%;
+  padding: 20px 0 0;
+}
+
+.wishlist {
+  border-bottom: 2px solid $sky-blue;
+}
+
+.books-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.comment-titles {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.comment-book-title {
+  color: $sky-blue;
+  text-decoration: underline;
+  font-size: 14px;
+  cursor: pointer;
+}

@@ -1,0 +1,48 @@
+.user-information
+  img.user-icon.big-user-icon(ng-src='{{profCtrl.user.image_url}}', alt='')
+  .user-data
+    h2.subtitle
+      | {{profCtrl.user.first_name}} {{profCtrl.user.last_name}}
+    span.form-label
+      | {{profCtrl.user.email}}
+    .counters
+      span.books-counter
+        | {{profCtrl.user.rents_counter}} {{'ALREADY_READ' | translate}}
+      span.comments-counter
+        | {{profCtrl.user.comments_counter}} {{'COMMENTS' | translate}}
+.rented-books
+  h2.subtitle
+    | {{'ALREADY_READ' | translate}}
+  .books-list
+    .book(ng-repeat = 'book in profCtrl.rentedBooks')
+      img.book-img(ng-src = '{{book.book.image_url}}' alt = '' ui-sref = 'info({id: book.book.id})')
+      b.book-title
+        | {{book.book.title}}
+      span.book-author
+        | {{book.book.author}}
+.wishlist
+  h2.subtitle
+    | {{'WISHLIST' | translate}}
+  .books-list
+    .book(ng-repeat = 'book in profCtrl.wishlistBooks')
+      img.book-img(ng-src = '{{book.image_url}}' alt = '' ui-sref = 'info({id: book.id})')
+      b.book-title
+        | {{book.title}}
+      span.book-author
+        | {{book.author}}
+.comments
+  h2.subtitle.comments-title
+    | {{ 'COMMENTS' | translate }}
+  ol.loaded-comments
+    li.comment(ng-repeat = 'comment in profCtrl.comments | limitTo: -4')
+      img.comment-img(ng-src = '{{comment.user.image_url}}' alt = '')
+      .comment-data
+        .comment-titles
+          b.comment-name
+            | {{comment.user.first_name}} {{comment.user.last_name}}
+          b.comment-book-title(ui-sref = 'info({id: comment.book.id})')
+            | {{comment.book.title}}
+        span.comment-date
+          | {{profCtrl.getDate(comment.created_at)}}
+        p.comment-desc
+          | {{comment.content}}
