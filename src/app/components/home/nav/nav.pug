@@ -1,13 +1,13 @@
 img.wbooks-logo(src='assets/wbooks_logo.svg' ui-sref='home' alt='')
 md-menu-bar.menu-bar
-  md-menu
-    img.notifications-icon(src='assets/notifications.svg' ng-click='$mdMenu.open($event)' alt='' md-menu-align-target)
+  md-menu(md-position-mode = 'target-right target' md-offset='0 52')
+    div.notifications-icon(ng-click='$mdMenu.open($event)' alt='' md-menu-align-target)
     md-menu-content.menu-content-notifications
       md-menu-item.notifications-menu-item(ng-repeat='notAct in navCtrl.notifications')
         img.notification-image(ng-src='{{notAct.image}}' alt='')
         .notification-info
           span.notification-description
-            | {{notAct.description}}
+            | {{notAct.body}}
           b.notification-title
             | {{notAct.title}}
           span.notification-author

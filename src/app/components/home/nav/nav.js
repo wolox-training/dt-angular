@@ -6,7 +6,8 @@ angular.module('wbooks').controller('NavController', [
   '$translate',
   function(sessionService, notificationsService, loginService, $state, $translate) {
     this.notifications = [];
-    notificationsService.getNotifications().then((data) => this.notifications = data.data);
+    this.readNotificationsCount = 0;
+    loginService.getUserInfo().then(data => notificationsService.getNotifications(data.data.id).then((data2) => this.notifications = data.data));
     this.userOptions = [
       {
         text: $translate.instant('PROFILE'),
@@ -22,5 +23,14 @@ angular.module('wbooks').controller('NavController', [
         }
       },
     ];
+    this.getReadNotificationsCount = function() {
+      let count = 0;
+      this.notifications.forEach(element => {
+        if (element.read === false){
+          count++;
+        }
+      });
+      return count;
+    };
   }
 ]);
