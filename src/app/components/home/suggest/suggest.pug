@@ -1,0 +1,42 @@
+form.suggest-form(name = 'suggestForm' ng-submit = 'suggestForm.$valid && sugCtrl.send()' novalidate)
+  img.new-book-img(ng-src = '../assets/add_book.svg' alt = '')
+  h4.suggest-title
+    | {{ 'SUGGEST_BOOK' | translate }}
+  .name
+    span.form-label
+      | {{ 'NAME' | translate }}
+    input.form-input(type = 'text' name = 'name' ng-model = 'sugCtrl.name' ng-pattern = '/^[a-zA-Z]*$/' required)
+    ng-messages.error(for = 'suggestForm.name.$error' role = 'alert')
+      ng-message(when = 'pattern')
+        | {{ 'WRONG_NAME' | translate }}
+  .author
+    span.form-label
+      | {{ 'AUTHOR' | translate }}
+    input.form-input(type = 'text' name = 'author' ng-model = 'sugCtrl.author' ng-pattern = '/^[a-zA-Z]*$/' required)
+    ng-messages.error(for = 'suggestForm.author.$error' role = 'alert')
+      ng-message(when = 'pattern')
+        | {{ 'WRONG_AUTHOR' | translate }}
+  .price-year
+    .price
+      span.form-label
+        | {{ 'PRICE' | translate }}
+      input.form-input(type = 'text' name = 'price' ng-model = 'sugCtrl.price')
+    .year
+      span.form-label
+        | {{ 'YEAR' | translate }}
+      input.form-input(type = 'text' name = 'year' ng-model = 'sugCtrl.year')
+  .editorial
+    span.form-label
+      | {{ 'EDITORIAL' | translate }}
+    input.form-input(type = 'text' name = 'editorial' ng-model = 'sugCtrl.editorial')
+  .link
+    span.form-label
+      | {{ 'LINK' | translate }}
+    input.form-input(type = 'link' name = 'link' ng-model = 'sugCtrl.link' required)
+    ng-messages.error(for = 'registerForm.email.$error' role = 'alert')
+      ng-message(when = 'link')
+        | {{ 'WRONG_LINK' | translate }}
+  .send-cancel
+    button.cancel(ng-click = 'closeThisDialog()')
+      | {{ 'CANCEL' | translate }}
+    input.send(type = 'submit' name = 'submit' value = "{{ 'ACCEPT' | translate }}")

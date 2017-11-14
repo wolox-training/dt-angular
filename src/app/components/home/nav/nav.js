@@ -7,12 +7,12 @@ angular.module('wbooks').controller('NavController', [
   function(sessionService, notificationsService, loginService, $state, $translate) {
     this.notifications = [];
     this.readNotificationsCount = 0;
-    loginService.getUserInfo().then(data => notificationsService.getNotifications(data.data.id).then((data2) => this.notifications = data.data));
+    loginService.getUserInfo().then((data) => notificationsService.getNotifications(data.data.id).then((data2) => this.notifications = data2.data));
     this.userOptions = [
       {
         text: $translate.instant('PROFILE'),
-        action: function() {
-          loginService.getUserInfo().then(data => $state.go('profile',{id: data.data.id}));
+        action: () => {
+          loginService.getUserInfo().then((data) => $state.go('profile', { id: data.data.id }));
         }
       },
       {
@@ -25,8 +25,8 @@ angular.module('wbooks').controller('NavController', [
     ];
     this.getReadNotificationsCount = function() {
       let count = 0;
-      this.notifications.forEach(element => {
-        if (element.read === false){
+      this.notifications.forEach((element) => {
+        if (element.read === false) {
           count++;
         }
       });

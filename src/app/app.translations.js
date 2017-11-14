@@ -1,4 +1,4 @@
-angular.module('wbooks').config(function($translateProvider) {
+angular.module('wbooks').config(['$translateProvider', function($translateProvider) {
   const spanish = {
     WBOOKS_TITLE: 'Wbooks!',
     SEARCH_PLACEHOLDER: 'Buscar...',
@@ -32,7 +32,14 @@ angular.module('wbooks').config(function($translateProvider) {
     SUCCESFULLY_ADDED: 'Agregado correctamente',
     MAX_CHARS: 'No puede ingresar mas de 255 caracteres',
     PROFILE: 'Perfil',
-    ALREADY_READ: 'Leidos'
+    ALREADY_READ: 'Leidos',
+    SUGGEST_BOOK: 'Sugerir libros',
+    WRONG_AUTHOR: 'El autor solo puede tener letras',
+    WRONG_LINK: 'Ingrese un link',
+    LINK: 'Link',
+    PRICE: 'Precio',
+    YEAR: 'A\u00F1o',
+    EDITORIAL: 'Editorial'
   };
   const english = {
     WBOOKS_TITLE: 'Wbooks!',
@@ -61,9 +68,9 @@ angular.module('wbooks').config(function($translateProvider) {
     WRONG_SURNAME: 'Surname should have only letters',
     WRONG_NAME: 'Name should have only letters',
     WISHLIST: 'Whishlist',
-    PROCESSING: 'Processing...',
+    PROCESSING: 'Processing...'
   };
   $translateProvider.translations('es', spanish);
   $translateProvider.translations('en', english);
   $translateProvider.preferredLanguage('es');
-});
+}]);

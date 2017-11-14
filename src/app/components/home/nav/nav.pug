@@ -1,7 +1,7 @@
 img.wbooks-logo(src='assets/wbooks_logo.svg' ui-sref='home' alt='')
 md-menu-bar.menu-bar
-  md-menu(md-position-mode = 'target-right target' md-offset='0 52')
-    div.notifications-icon(ng-click='$mdMenu.open($event)' alt='' md-menu-align-target)
+  md-menu(md-position-mode = 'target-right target' md-offset='0 70')
+    .notifications-icon(ng-click='$mdMenu.open($event)' alt='' md-menu-align-target)
     md-menu-content.menu-content-notifications
       md-menu-item.notifications-menu-item(ng-repeat='notAct in navCtrl.notifications')
         img.notification-image(ng-src='{{notAct.image}}' alt='')
@@ -14,10 +14,10 @@ md-menu-bar.menu-bar
             | {{notAct.author}}
           span.notification-alert
             | {{notAct.alert}}
-  img.sugestions-icon(src='assets/add_book.svg' alt='')
-  md-menu(md-position-mode = 'target-right target' md-offset='0 52')
+  img.sugestions-icon(src='assets/add_book.svg' alt='' ui-sref='home.suggest')
+  md-menu(md-position-mode = 'target-right target' md-offset='0 70')
     img.user-icon(ng-src='{{navCtrl.user.image}}' ng-click='$mdMenu.open($event)' alt='')
-    md-menu-content.menu-content-user
+    md-menu-content.menu-content-user(width='1')
       md-menu-item.user-menu-item(ng-repeat='buttonAct in navCtrl.userOptions')
         md-button.user-menu-button(ng-click = 'buttonAct.action()')
           | {{buttonAct.text}}

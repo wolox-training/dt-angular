@@ -8,9 +8,7 @@ angular.module('wbooks').controller('InfoController', [
     this.sugestions = [];
     this.rentButton = {
       disabled: true,
-      onclick: function() {
-        console.log('HOLA');
-      },
+      onclick: () => {},
       text: 'PROCESSING',
       error: {}
     };
@@ -37,10 +35,10 @@ angular.module('wbooks').controller('InfoController', [
         this.rentButton.onclick = function() {
           console.log('RENT');
         };
-      }else if (rentedBy === this.userID) {
+      } else if (rentedBy === this.userID) {
         this.rentButton.text = 'RETURN_BOOK';
         this.rentButton.disabled = true;
-      }else {
+      } else {
         this.rentButton.text = 'WISHLIST';
         this.rentButton.onclick = this.addWish;
         userID = this.user.id;
@@ -49,7 +47,7 @@ angular.module('wbooks').controller('InfoController', [
     };
     booksService
       .getRentStatus(this.book.id)
-      .then(data => this.changeRentStatus(data));
+      .then((data) => this.changeRentStatus(data));
     booksService
       .getSugestions(this.book.id)
       .then((data) => this.sugestions = data.data);
@@ -58,20 +56,20 @@ angular.module('wbooks').controller('InfoController', [
       .getComments(this.book.id)
       .then((data) => this.comments = data.data);
     this.user = {};
-    loginService.getUserInfo().then(data => this.user = data.data);
+    loginService.getUserInfo().then((data) => this.user = data.data);
     this.newCommentInput = '';
     this.addComment = function(infoCtrl) {
       const newComment = {
         user: {
           first_name: infoCtrl.user.first_name,
           last_name: infoCtrl.user.last_name,
-          image_url: infoCtrl.user.image,
+          image_url: infoCtrl.user.image
         },
         created_at: moment().format(),
         content: infoCtrl.newCommentInput
       };
       infoCtrl.comments.push(newComment);
-      booksService.addComment(infoCtrl.book.id,infoCtrl.user.id,infoCtrl.newCommentInput).then(data => console.log(data),error=>console.log(error));
+      booksService.addComment(infoCtrl.book.id, infoCtrl.user.id, infoCtrl.newCommentInput).then((data) => console.log(data), (error) => console.log(error));
       infoCtrl.newCommentInput = '';
     };
     this.getDate = function(stamp) {

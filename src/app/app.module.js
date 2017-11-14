@@ -7,6 +7,6 @@ angular.module(
     'ngMessages',
     'ngMaterial',
     'pascalprecht.translate',
-    'ngDialog',
+    'ngDialog'
   ]
 );

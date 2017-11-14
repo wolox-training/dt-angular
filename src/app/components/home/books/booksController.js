@@ -7,7 +7,7 @@ angular.module('wbooks').controller('BooksController', [
     this.login = {};
 
     booksService.getBooks().then((data) => this.books = data.data);
-    
+
     this.checkLogged = function() {
       return false;
     };
@@ -20,7 +20,7 @@ angular.module('wbooks').controller('BooksController', [
       }
     };
 
-    this.submitSearch = () => { console.log(this.books); };
+    this.submitSearch = () => console.log(this.books);
 
     this.filters = [
       { name: $translate.instant('SELECT_FILTER'), disabled: true, value: '1' },

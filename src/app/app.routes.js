@@ -32,7 +32,7 @@ angular.module('wbooks').config([
       })
       .state('home.login', {
         url: 'login',
-        onEnter: ['ngDialog', function(ngDialog) {
+        onEnter: ['ngDialog', '$state', function(ngDialog, $state) {
           const modalLog = ngDialog.open({
             template: '../app/components/home/login/login.html',
             controller: 'LoginController',
@@ -41,9 +41,9 @@ angular.module('wbooks').config([
             showClose: false,
             width: '40%',
             closeByDocument: false,
-            closeByNavigation: true,
+            closeByNavigation: true
           });
-          modalLog.closePromise.then(() => location.reload() );
+          modalLog.closePromise.then(() => $state.go('home', {}, { reload: true }) );
         }],
         data: {
           requireLogin: false
@@ -51,7 +51,7 @@ angular.module('wbooks').config([
       })
       .state('home.register', {
         url: 'register',
-        onEnter: ['ngDialog', function(ngDialog) {
+        onEnter: ['ngDialog', '$state', function(ngDialog, $state) {
           const modalReg = ngDialog.open({
             template: '../app/components/home/register/register.html',
             controller: 'RegisterController',
@@ -59,12 +59,30 @@ angular.module('wbooks').config([
             className: 'ngdialog-theme-default',
             showClose: false,
             width: '40%',
-            closeByNavigation: true,
+            closeByNavigation: true
           });
-          modalReg.closePromise.then(() => location.reload() );
+          modalReg.closePromise.then(() => $state.go('home', {}, { reload: true }));
         }],
         data: {
           requireLogin: false
+        }
+      })
+      .state('home.suggest', {
+        url: 'suggest-book',
+        onEnter: ['ngDialog', '$state', function(ngDialog, $state) {
+          const modalReg = ngDialog.open({
+            template: '../app/components/home/suggest/suggest.html',
+            controller: 'SuggestController',
+            controllerAs: 'sugCtrl',
+            className: 'ngdialog-theme-default',
+            showClose: false,
+            width: '40%',
+            closeByNavigation: true
+          });
+          modalReg.closePromise.then(() => $state.go('home', {}, { reload: true }));
+        }],
+        data: {
+          requireLogin: true
         }
       })
       .state('info', {

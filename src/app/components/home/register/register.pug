@@ -37,4 +37,4 @@ form.register-form(name = 'registerForm' ng-submit = 'registerForm.$valid && reg
   .send-cancel
     button.cancel(ng-click = 'closeThisDialog()')
       | {{ 'CANCEL' | translate }}
-    input.send(type = 'submit' name = 'submit' ng-model = 'regCtrl.email' value = "{{ 'ACCEPT' | translate }}")
+    input.send(type = 'submit' name = 'submit' value = "{{ 'ACCEPT' | translate }}")

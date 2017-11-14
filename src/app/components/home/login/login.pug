@@ -24,4 +24,4 @@ form.login-form(name = 'loginForm' ng-submit = 'loginForm.$valid && logCtrl.send
   .send-cancel
     button.cancel(ng-click = 'closeThisDialog()')
       | {{ 'CANCEL' | translate }}
-    input.send(type = 'submit' name = 'submit' ng-model = 'logCtrl.email' value = "{{ 'ACCEPT' | translate }}")
+    input.send(type = 'submit' name = 'submit' value = "{{ 'ACCEPT' | translate }}")
