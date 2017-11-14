@@ -8,8 +8,8 @@ angular.module('wbooks').service('booksService', [
     this.getRentStatus = function(id) {
       return $http.get(api+'/books/'+id+'/rents')
     }
-    this.getSugestions = function() {
-      return $http.get('assets/Sugestions.json');
+    this.getSugestions = function(book_id) {
+      return $http.get(`https://wbooks-api-stage.herokuapp.com/api/v1/books/${book_id}/suggestions`);
     };
     this.getComments = function(book_id) {
       return $http.get(api + '/books/'+book_id+'/comments');
@@ -17,8 +17,5 @@ angular.module('wbooks').service('booksService', [
     this.addComment = function(book_id, user_id, content) {
       return $http.post(api + '/books/'+book_id+'/comments',{book_id, user_id, content});
     };
-    this.getRentedBooks = function(user_id) {
-      return $http.get(api + '/users/'+user_id+'/rents');
-    }
   }
 ]);

@@ -13,9 +13,12 @@ angular.module('wbooks').service('loginService', [
     };
     this.getOtherUserInfo = function(id) {
       return $http.get(api + '/users/' + id)
-    }
+    };
     this.getComments = function(user_id) {
       return $http.get(api + '/users/'+user_id+'/comments');
+    };
+    this.getRentedBooks = function(user_id) {
+      return $http.get(api + '/users/'+user_id+'/rents');
     };
   }
 ]);

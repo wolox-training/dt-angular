@@ -5,7 +5,7 @@ angular.module('wbooks').controller('ProfileController', ['loginService', 'books
   this.comments = [];
   this.manageUserInfo = function(data) {
     this.user = data.data;
-    booksService.getRentedBooks(this.user.id).then((data) => this.rentedBooks = data.data);
+    loginService.getRentedBooks(this.user.id).then((data) => this.rentedBooks = data.data);
     wishlistService.getWishlist(this.user.id).then((data) => this.wishlistBooks = data.data, () => this.wishlistBooks = []);
     loginService.getComments(this.user.id).then((data) => this.comments = data.data);
   };

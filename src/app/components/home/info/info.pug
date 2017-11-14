@@ -25,7 +25,7 @@ a.return(ui-sref = 'home')
   h2.subtitle
     | {{ 'SUGESTIONS' | translate }}
   .sugestions-list
-    img.book-img.shorter-image(ng-repeat = 'book in infoCtrl.sugestions' ng-src = '{{book.image_url}}' alt = '')
+    img.book-img.shorter-image(ng-repeat = 'book in infoCtrl.sugestions' ng-src = '{{book.image_url}}' alt = '' ui-sref = 'info({id: book.id})')
 .comments
   h2.subtitle.comments-title
     | {{ 'COMMENTS' | translate }}

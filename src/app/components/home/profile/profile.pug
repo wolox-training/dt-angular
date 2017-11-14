@@ -10,7 +10,7 @@
         | {{profCtrl.user.rents_counter}} {{'ALREADY_READ' | translate}}
       span.comments-counter
         | {{profCtrl.user.comments_counter}} {{'COMMENTS' | translate}}
-.rented-books
+.rented-books(ng-show = 'profCtrl.rentedBooks.length > 0')
   h2.subtitle
     | {{'ALREADY_READ' | translate}}
   .books-list
@@ -20,17 +20,17 @@
         | {{book.book.title}}
       span.book-author
         | {{book.book.author}}
-.wishlist
+.wishlist(ng-show = 'profCtrl.wishlistBooks.length > 0')
   h2.subtitle
     | {{'WISHLIST' | translate}}
   .books-list
-    .book(ng-repeat = 'book in profCtrl.wishlistBooks')
-      img.book-img(ng-src = '{{book.image_url}}' alt = '' ui-sref = 'info({id: book.id})')
+    .book(ng-repeat = 'wishbook in profCtrl.wishlistBooks')
+      img.book-img(ng-src = '{{wishbook.book.image_url}}' alt = '' ui-sref = 'info({id: wishbook.book.id})')
       b.book-title
-        | {{book.title}}
+        | {{wishbook.book.title}}
       span.book-author
-        | {{book.author}}
-.comments
+        | {{wishbook.book.author}}
+.comments(ng-show = 'profCtrl.comments.length > 0')
   h2.subtitle.comments-title
     | {{ 'COMMENTS' | translate }}
   ol.loaded-comments
